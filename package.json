@@ -1,0 +1,28 @@
+{
+  "name": "alfred-api",
+  "version": "1.0.0",
+  "description": "The REST api for alfred web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrantWasil/alfred-api.git"
+  },
+  "author": "Grant Wasil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrantWasil/alfred-api/issues"
+  },
+  "homepage": "https://github.com/GrantWasil/alfred-api#readme",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
