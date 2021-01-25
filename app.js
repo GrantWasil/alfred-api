@@ -1,5 +1,3 @@
-// eslint-disable-next-line global-require
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
