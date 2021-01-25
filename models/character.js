@@ -15,16 +15,36 @@ const characterSchema = new mongoose.Schema({
   bio: {
     type: String,
   },
-  goals: [String],
-  others: [String],
+  goals: [
+    {
+      name: String,
+      text: String,
+    },
+  ],
+  others: [
+    {
+      name: String,
+      text: String,
+    },
+  ],
   items: [String],
   tips: [String],
-  abilities: [String],
+  abilities: [
+    {
+      name: String,
+      text: String,
+      uses: Number,
+    },
+  ],
   secret: {
     type: String,
   },
   clue: {
     type: String,
+  },
+  money: {
+    type: Number,
+    default: 0,
   },
   active: {
     type: Boolean,
