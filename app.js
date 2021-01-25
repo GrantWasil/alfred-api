@@ -23,8 +23,8 @@ mongoose.connect(DATABASE_ADDRESS, {
   useFindAndModify: false,
 });
 
-app.use('/', routes);
+app.use('/api', routes);
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(PORT || 3000);
+app.listen(PORT || 3001);
