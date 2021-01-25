@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const characterSchema = new mongoose.Schema({
+  keyword: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -21,6 +25,10 @@ const characterSchema = new mongoose.Schema({
   },
   clue: {
     type: String,
+  },
+  active: {
+    type: Boolean,
+    default: false,
   },
 });
 
