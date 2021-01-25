@@ -27,4 +27,4 @@ app.use('/', routes);
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(3000 || PORT);
+app.listen(PORT || 3000);
