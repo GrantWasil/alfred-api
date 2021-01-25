@@ -1,0 +1,8 @@
+@import url(./__title/login__title.css);
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 80%;
+}
