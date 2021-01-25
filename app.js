@@ -8,6 +8,7 @@ const helmet = require('cors');
 const routes = require('./routes');
 const limiter = require('./utils/rateLimiter');
 const { DATABASE_ADDRESS } = require('./utils/constants');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
@@ -25,5 +26,6 @@ mongoose.connect(DATABASE_ADDRESS, {
 
 app.use('/', routes);
 app.use(errors());
+app.use(errorHandler);
 
 app.listen(3000);
