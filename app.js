@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { errors } = require('celebrate');
 const helmet = require('cors');
+const path = require('path');
 const routes = require('./routes');
 const limiter = require('./utils/rateLimiter');
 const { DATABASE_ADDRESS, PORT } = require('./utils/constants');
@@ -21,6 +22,11 @@ mongoose.connect(DATABASE_ADDRESS, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
+});
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/client/build/index.hmtl`));
 });
 
 app.use('/api', routes);
