@@ -12,6 +12,9 @@ const characterSchema = new mongoose.Schema({
   traits: {
     type: String,
   },
+  preview: {
+    type: String,
+  },
   bio: {
     type: String,
   },
