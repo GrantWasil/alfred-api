@@ -6,11 +6,15 @@ function Character(props) {
 
   console.log(characterData);
   return (
-    <Box>
+    <Box
+      align="center"
+      justify="center"
+    >
       <Heading>{characterData.name}</Heading>
-      <Text>`How people see you: {characterData.traits}</Text>
-      <Paragraph>`Some information to help you prepare: {characterData.preview}</Paragraph>
+      <Text>How people see you: {characterData.traits}</Text>
+      <Paragraph>Some information to help you prepare: {characterData.preview}</Paragraph>
 
+      <Heading level='2'>Grant will be posting more imporant information here in the next two days. Check back.</Heading>
       <Text>You will recieve more information about your character on the day of the event. Feel free to ask Grant if you have any questions</Text>
     </Box>
   )
