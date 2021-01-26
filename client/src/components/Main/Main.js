@@ -9,12 +9,16 @@ import './Main.css';
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [characterData, setCharacterData] = useState({});
   const history = useHistory();
 
   React.useEffect(() => {
     api.getCharacterData()
       .then((res) => {
-        console.log(res);
+        if (res.data) {
+          setCharacterData(res.data);
+          setIsLoggedIn(true);
+        }
       })
   }, [history])
 
@@ -39,7 +43,7 @@ function Main() {
     <Box flex fill="vertical" align="center" background={'light-2'}>
       <Route exact path="/">
         {isLoggedIn ? (
-          <Character />
+          <Character characterData={characterData}/>
         ) : (
           <Login onLoginCharacter={handleLoginCharacter} />
         )}
