@@ -51,7 +51,7 @@ function Main() {
         <Route path="/login">
           <Login onLoginCharacter={handleLoginCharacter} />
         </Route>
-        <Route path="/create">
+        <Route exact path="/create">
           <Create onCreateCharacter={handleCreateCharacter} />
         </Route>
         <ProtectedRoute
