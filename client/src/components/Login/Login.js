@@ -11,7 +11,6 @@ function Login(props) {
   }
 
   function handleClick() {
-    setValue(value.toLowerCase());
     onLoginCharacter(value);
     setValue('');
   }
@@ -25,6 +24,7 @@ function Login(props) {
       pad={{ top: 'xlarge' }}
       style={{ zIndex: '1' }}
       width="medium"
+      gap="medium"
     >
       <Heading level="2" textAlign="center">
         Please enter your keyword
@@ -37,13 +37,7 @@ function Login(props) {
           onChange={handleValueChange}
         />
       </Keyboard>
-      <Button
-        primary
-        label="Login"
-        type="submit"
-        margin={{ top: 'small' }}
-        onClick={handleClick}
-      />
+      <Button primary label="Login" type="submit" onClick={handleClick} />
     </Box>
   );
 }
