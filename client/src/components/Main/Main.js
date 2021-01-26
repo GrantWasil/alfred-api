@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -9,6 +9,14 @@ import './Main.css';
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const history = useHistory();
+
+  React.useEffect(() => {
+    api.getCharacterData()
+      .then((res) => {
+        console.log(res);
+      })
+  }, [history])
 
   function handleCreateCharacter(data) {
     api
