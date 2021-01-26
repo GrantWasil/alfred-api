@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
-import { Route, useHistory, Redirect, Switch } from 'react-router-dom';
+import { Route, useHistory, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -55,7 +55,7 @@ function Main() {
           <Create onCreateCharacter={handleCreateCharacter} />
         </Route>
         <ProtectedRoute
-          path="/"
+          exact path="/"
           loggedIn={isLoggedIn}
           component={Character}
           characterData={characterData}
