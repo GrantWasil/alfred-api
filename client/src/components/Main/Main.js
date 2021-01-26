@@ -45,6 +45,13 @@ function Main() {
     });
   }
 
+  function handleLogoutCharacter() {
+    localStorage.removeItem('jwt');
+    setIsLoggedIn(false);
+    setCharacterData({});
+    history.push('/login');
+  }
+
   return (
     <Box flex fill="vertical" align="center" background={'light-2'}>
       <Switch>
@@ -59,6 +66,7 @@ function Main() {
           loggedIn={isLoggedIn}
           component={Character}
           characterData={characterData}
+          onLogoutCharacter={handleLogoutCharacter}
         />
         <Route>
           { isLoggedIn ? <Redirect to="/" /> : <Redirect to="/login" />}

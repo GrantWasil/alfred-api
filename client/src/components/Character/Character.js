@@ -1,11 +1,10 @@
 import React from 'react';
-import { Box, Heading, Paragraph, Text } from 'grommet';
+import { Box, Heading, Paragraph, Text, Button } from 'grommet';
 import MainHeader from '../MainHeader/MainHeader';
 
 function Character(props) {
-  const { characterData } = props;
+  const { characterData, onLogoutCharacter } = props;
 
-  console.log(characterData);
   return (
     <Box align="center" justify="center" flex fill="vertical">
       <MainHeader />
@@ -23,6 +22,7 @@ function Character(props) {
         You will recieve more information about your character on the day of the
         event. Feel free to ask Grant if you have any questions
       </Text>
+      <Button secondary onClick={onLogoutCharacter} label="Sign Out" />
     </Box>
   );
 }
