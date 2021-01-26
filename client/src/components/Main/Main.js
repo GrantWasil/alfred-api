@@ -15,6 +15,7 @@ function Main() {
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
+      console.log(res);
       if (res.data) {
         setCharacterData(res.data);
         setIsLoggedIn(true);
