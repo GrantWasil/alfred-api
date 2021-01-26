@@ -51,7 +51,7 @@ function Main() {
         <Route path="/login">
           <Login onLoginCharacter={handleLoginCharacter} />
         </Route>
-        <Route exact path="/create">
+        <Route path="/create">
           <Create onCreateCharacter={handleCreateCharacter} />
         </Route>
         <ProtectedRoute
@@ -60,9 +60,6 @@ function Main() {
           component={Character}
           characterData={characterData}
         />
-        <Route>
-          {isLoggedIn ? <Redirect to="/" /> : <Redirect to="/login" />}
-        </Route>
       </Switch>
     </Box>
   );
