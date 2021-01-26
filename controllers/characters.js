@@ -34,6 +34,8 @@ module.exports.createCharacter = (req, res, next) => {
     secret,
     clue,
     active,
+    preview,
+    money,
   } = req.body.data;
 
   Character.create({
@@ -49,6 +51,8 @@ module.exports.createCharacter = (req, res, next) => {
     secret,
     clue,
     active,
+    preview,
+    money,
   })
     .then((character) => {
       res.status(201).send({ character });
@@ -70,6 +74,8 @@ module.exports.updateCharacter = (req, res, next) => {
     secret,
     clue,
     active,
+    preview,
+    money,
   } = req.body;
 
   Character.findOneAndUpdate(keyword, {
@@ -85,6 +91,8 @@ module.exports.updateCharacter = (req, res, next) => {
     secret,
     clue,
     active,
+    preview,
+    money,
   })
     .then((character) => {
       res.status(204).send({ character });
