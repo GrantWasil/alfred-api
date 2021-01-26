@@ -11,6 +11,7 @@ function Login(props) {
   }
 
   function handleClick() {
+    setValue(value.toLowerCase());
     onLoginCharacter(value);
     setValue('');
   }
