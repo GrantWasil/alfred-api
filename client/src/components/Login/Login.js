@@ -3,8 +3,18 @@ import { Box, Button, TextInput, Heading, Form } from 'grommet';
 import './Login.css';
 
 function Login(props) {
-  const [formData, changeFormData] = useState({});
+  const [value, setValue] = useState('');
   const { onLoginChracter } = props;
+
+  function handleValueChange(e) {
+    setValue(e.target.value);
+  }
+
+  function handleClick() {
+    onLoginChracter(value);
+    setValue('');
+  }
+
   return (
     <Box
       tag="section"
@@ -18,19 +28,19 @@ function Login(props) {
       <Heading level="2" textAlign="center">
         Please enter your keyword
       </Heading>
-      <Form
-        value={formData}
-        onChange={(nextValue) => changeFormData(nextValue)}
-        onReset={() => changeFormData({})}
-        onSubmit={(formData) => {
-          const data = formData.value;
-          console.log(data);
-          onLoginChracter(data)
-        }}
-      >
-        <TextInput placeholder="Keyword" textAlign="center" />
-        <Button primary label="Login" type="submit" margin={{ top: 'small' }} />
-      </Form>
+      <TextInput
+        placeholder="Keyword"
+        textAlign="center"
+        value={value}
+        onChange={handleValueChange}
+      />
+      <Button
+        primary
+        label="Login"
+        type="submit"
+        margin={{ top: 'small' }}
+        onClick={handleClick}
+      />
     </Box>
   );
 }
