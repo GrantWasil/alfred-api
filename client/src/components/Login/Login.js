@@ -7,7 +7,7 @@ function Login(props) {
   const { onLoginCharacter } = props;
 
   function handleValueChange(e) {
-    setValue(e.target.value);
+    setValue(e.target.value.toLowerCase());
   }
 
   function handleClick() {
