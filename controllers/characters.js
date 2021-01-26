@@ -34,7 +34,7 @@ module.exports.createCharacter = (req, res, next) => {
     secret,
     clue,
     active,
-  } = req.data.body;
+  } = req.body.data;
 
   Character.create({
     keyword,
