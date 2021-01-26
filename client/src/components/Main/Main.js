@@ -19,8 +19,8 @@ function Main() {
       .catch((e) => console.log(e));
   }
 
-  function handleLoginCharacter(data) {
-    api.loginUser(data.keyword).then((res) => {
+  function handleLoginCharacter(keyword) {
+    api.loginUser(keyword).then((res) => {
       if (res.token) {
         setIsLoggedIn(true);
       }
