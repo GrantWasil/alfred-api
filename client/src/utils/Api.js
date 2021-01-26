@@ -47,7 +47,7 @@ class Api {
       });
   }
 
-  getCharacterData(id) {
+  getCharacterData() {
     return fetch(`${this._baseUrl}/characters/me`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
