@@ -3,8 +3,8 @@ import { Box, Form, FormField, TextInput, TextArea, Button } from 'grommet';
 import './Create.css';
 
 function Create(props) {
-  const {onCreateCharacter}= props;
-  const [formData, changeFormData] = useState({});
+  const { onCreateCharacter } = props;
+  const [ formData, changeFormData ] = useState({});
   return (
     <Box pad={{ top: 'xlarge' }}>
       <Form

@@ -14,9 +14,11 @@ const characterSchema = new mongoose.Schema({
   },
   preview: {
     type: String,
+    default: ' ',
   },
   bio: {
     type: String,
+    default: ' ',
   },
   goals: [
     {
