@@ -14,12 +14,7 @@ function Create(props) {
         onSubmit={(formData) => {
           const data = formData.value;
           console.log(data);
-          onCreateCharacter({
-            keyword: data.keyword,
-            name: data.name,
-            traits: data.traits,
-            preview: data.preview,
-          })
+          onCreateCharacter(data)
         }}
       >
         <FormField name="keyword" label="Keyword" htmlFor="text-keyword-id">

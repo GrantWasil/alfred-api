@@ -8,10 +8,10 @@ import './Main.css';
 
 function Main() {
 
-  function handleCreateCharacter(keyword, name, traits, preview) {
-    api.createNewCharacter(keyword, name, traits, preview)
-      .then((data) => {
-        console.log(data)
+  function handleCreateCharacter(data) {
+    api.createNewCharacter(data)
+      .then((res) => {
+        console.log(res)
       })
       .catch(e => console.log(e));
   }

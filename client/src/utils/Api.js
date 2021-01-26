@@ -4,17 +4,14 @@ class Api {
     this._headers = headers;
   }
 
-  createNewCharacter(keyword, name, traits, preview) {
+  createNewCharacter(data) {
     return fetch(`${this._baseUrl}/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        keyword,
-        name,
-        traits,
-        preview,
+        data
       })
     })
       .then((res) => {
