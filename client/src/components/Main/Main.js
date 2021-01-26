@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
-import { Route, useHistory, Switch } from 'react-router-dom';
+import { Route, useHistory, Switch, Redirect } from 'react-router-dom';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -60,6 +60,9 @@ function Main() {
           component={Character}
           characterData={characterData}
         />
+        <Route>
+          { isLoggedIn ? <Redirect to="/" /> : <Redirect to="/login" />}
+        </Route>
       </Switch>
     </Box>
   );
