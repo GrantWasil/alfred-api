@@ -36,7 +36,7 @@ function Main() {
     api.loginUser(keyword).then((res) => {
       if (res.token) {
         setIsLoggedIn(true);
-        history.push('/me');
+        history.push('/');
       }
     });
   }
