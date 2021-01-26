@@ -4,7 +4,7 @@ const { NODE_ENV, JWT_SECRET } = require('../utils/constants');
 
 module.exports.loginCharacter = (req, res, next) => {
   const { keyword } = req.body;
-  return Character.findOne(keyword)
+  return Character.findOne({ keyword })
     .then((character) => {
       const token = jwt.sign({ _id: character._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       res.status(200).send({ token });
