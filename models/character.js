@@ -4,6 +4,7 @@ const characterSchema = new mongoose.Schema({
   keyword: {
     type: String,
     required: true,
+    unique: true,
   },
   name: {
     type: String,
