@@ -27,7 +27,7 @@ function Create(props) {
           <TextInput id="text-traits-id" name="traits" />
         </FormField>
         <FormField name="preview" label="Preview" htmlFor="text-preview-id">
-          <TextArea id="text-preview-id" name="preview" />
+          <TextInput id="text-preview-id" name="preview" />
         </FormField>
         <Box direction="row" gap="medium">
           <Button type="submit" primary label="Submit" />
