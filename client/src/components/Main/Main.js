@@ -14,15 +14,14 @@ function Main() {
   const history = useHistory();
 
   React.useEffect(() => {
-    api.getCharacterData()
-      .then((res) => {
-        if (res.data) {
-          setCharacterData(res.data);
-          setIsLoggedIn(true);
-          history.push('/');
-        }
-      })
-  }, [history])
+    api.getCharacterData().then((res) => {
+      if (res.data) {
+        setCharacterData(res.data);
+        setIsLoggedIn(true);
+        history.push('/');
+      }
+    });
+  }, [history]);
 
   function handleCreateCharacter(data) {
     api
@@ -45,18 +44,18 @@ function Main() {
   return (
     <Box flex fill="vertical" align="center" background={'light-2'}>
       <Switch>
+        <Route path="/login">
+          <Login onLoginCharacter={handleLoginCharacter} />
+        </Route>
+        <Route path="/create">
+          <Create onCreateCharacter={handleCreateCharacter} />
+        </Route>
         <ProtectedRoute
           path="/"
           loggedIn={isLoggedIn}
           component={Character}
           characterData={characterData}
         />
-        <Route path="/login">
-            <Login onLoginCharacter={handleLoginCharacter} />
-        </Route>
-        <Route path="/create">
-          <Create onCreateCharacter={handleCreateCharacter} />
-        </Route>
         <Route>
           {isLoggedIn ? <Redirect to="/" /> : <Redirect to="/login" />}
         </Route>
