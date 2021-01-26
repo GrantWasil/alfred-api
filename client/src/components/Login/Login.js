@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, TextInput, Heading, Form } from 'grommet';
+import { Box, Button, TextInput, Heading, Keyboard } from 'grommet';
 import './Login.css';
 
 function Login(props) {
@@ -28,12 +28,14 @@ function Login(props) {
       <Heading level="2" textAlign="center">
         Please enter your keyword
       </Heading>
-      <TextInput
-        placeholder="Keyword"
-        textAlign="center"
-        value={value}
-        onChange={handleValueChange}
-      />
+      <Keyboard onEnter={handleClick}>
+        <TextInput
+          placeholder="Keyword"
+          textAlign="center"
+          value={value}
+          onChange={handleValueChange}
+        />
+      </Keyboard>
       <Button
         primary
         label="Login"
