@@ -19,7 +19,7 @@ function Main() {
       if (res.character) {
         setCharacterData(res.character);
         setIsLoggedIn(true);
-        history.push('/');
+        history.push("/");
       }
     });
   }, [history]);
@@ -37,7 +37,7 @@ function Main() {
     api.loginUser(keyword).then((res) => {
       if (res.token) {
         setIsLoggedIn(true);
-        history.push('/');
+        history.push("/");
       }
     });
   }
