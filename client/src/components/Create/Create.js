@@ -4,7 +4,7 @@ import './Create.css';
 
 function Create(props) {
   const {onCreateCharacter}= props;
-  const [formData, changeFormData] = React.useState({});
+  const [formData, changeFormData] = useState({});
   return (
     <Box pad={{ top: 'xlarge' }}>
       <Form
@@ -13,6 +13,7 @@ function Create(props) {
         onReset={() => changeFormData({})}
         onSubmit={(formData) => {
           const data = formData.value;
+          console.log(data);
           onCreateCharacter({
             keyword: data.keyword,
             name: data.name,
