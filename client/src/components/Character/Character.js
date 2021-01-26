@@ -22,7 +22,7 @@ function Character(props) {
         You will recieve more information about your character on the day of the
         event. Feel free to ask Grant if you have any questions
       </Text>
-      <Button secondary onClick={onLogoutCharacter} label="Sign Out" />
+      <Button pad={{top: 'medium'}} secondary onClick={onLogoutCharacter} label="Sign Out" />
     </Box>
   );
 }
