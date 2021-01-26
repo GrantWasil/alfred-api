@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Heading } from 'grommet';
 
-function Character() {
+function Character(props) {
+  const { characterData } = props;
+
+  console.log(characterData);
   return (
     <Box>
       <Heading>Your character</Heading>
