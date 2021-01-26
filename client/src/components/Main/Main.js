@@ -3,6 +3,7 @@ import { Box } from 'grommet';
 import { Route } from 'react-router-dom';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
+import Character from '../Character/Character';
 import api from '../../utils/Api';
 import './Main.css';
 
@@ -30,7 +31,7 @@ function Main() {
     <Box flex fill="vertical" align="center" background={'light-2'}>
       <Route exact path="/">
         {isLoggedIn ? (
-          <>Logged In</>
+          <Character />
         ) : (
           <Login onLoginCharacter={handleLoginCharacter} />
         )}

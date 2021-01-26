@@ -4,14 +4,14 @@ import './Login.css';
 
 function Login(props) {
   const [value, setValue] = useState('');
-  const { onLoginChracter } = props;
+  const { onLoginCharacter } = props;
 
   function handleValueChange(e) {
     setValue(e.target.value);
   }
 
   function handleClick() {
-    onLoginChracter(value);
+    onLoginCharacter(value);
     setValue('');
   }
 
