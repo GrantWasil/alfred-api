@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Heading, Paragraph, Text } from 'grommet';
-import Header from '../Header/Header';
+import MainHeader from '../MainHeader/MainHeader';
 
 function Character(props) {
   const { characterData } = props;
@@ -13,7 +13,7 @@ function Character(props) {
       flex
       fill="vertical"
     >
-      <Header />
+      <MainHeader />
       <Heading>{characterData.name}</Heading>
       <Text>How people see you: {characterData.traits}</Text>
       <Paragraph>Some information to help you prepare: {characterData.preview}</Paragraph>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Header } from 'grommet';
 
-function Header() {
+function MainHeader() {
   return (
     <Header >
 
     </Header>
   )
 }
+
+export default MainHeader;
