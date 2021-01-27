@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Button, Nav, Anchor } from 'grommet';
 import { Link } from '@reach/router';
+import './MainHeader.css';
 
 function MainHeader(props) {
   const { characterData, onLogoutCharacter } = props;
@@ -9,13 +10,15 @@ function MainHeader(props) {
       fill="horizontal"
       background={'light-5'}
       pad='small'
+      height='medium'
+      align='center'
     >
       <Nav direction="row">
-        <Link to="/me">
+        <Link className='header__link' to="/me">
           Character
         </Link>
         {characterData.keyword === 'testing' ? (
-          <Link to="/create">
+          <Link className='header__link' to="/create">
             Create
           </Link>
         ) : (
