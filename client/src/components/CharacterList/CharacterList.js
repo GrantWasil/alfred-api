@@ -5,11 +5,12 @@ function CharacterList() {
   return (
     <Box
       align="center"
-      justify="center"
+      justify="start"
       flex
       fill="vertical"
       pad={'small'}
       textAlign="center"
+      background={'light-3'}
     >
       <Heading>Cast List</Heading>
       <Heading level="3" alignSelf="start">
