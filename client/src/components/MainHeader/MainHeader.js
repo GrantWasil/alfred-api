@@ -1,19 +1,23 @@
 import React from 'react';
-import { Header, Button, Nav } from 'grommet';
+import { Header, Button, Nav, Anchor } from 'grommet';
 import { Link } from '@reach/router';
 
 function MainHeader(props) {
   const { characterData, onLogoutCharacter } = props;
   return (
-    <Header>
+    <Header
+      fill="horizontal"
+      background={'brand'}
+      pad='small'
+    >
       <Nav direction="row">
-        <Button label="Character">
+        <Anchor label="Character">
           <Link to="/me" />
-        </Button>
+        </Anchor>
         {characterData.keyword === 'testing' ? (
-          <Button label="create">
+          <Anchor label="Create">
             <Link to="/testing" />
-          </Button>
+          </Anchor>
         ) : (
           <></>
         )}
