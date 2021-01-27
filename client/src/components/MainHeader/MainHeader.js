@@ -7,17 +7,17 @@ function MainHeader(props) {
   return (
     <Header
       fill="horizontal"
-      background={'brand'}
+      background={'light-5'}
       pad='small'
     >
       <Nav direction="row">
-        <Anchor label="Character">
-          <Link to="/me" />
-        </Anchor>
+        <Link to="/me">
+          Character
+        </Link>
         {characterData.keyword === 'testing' ? (
-          <Anchor label="Create">
-            <Link to="/testing" />
-          </Anchor>
+          <Link to="/create">
+            Create
+          </Link>
         ) : (
           <></>
         )}
