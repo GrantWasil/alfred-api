@@ -18,7 +18,7 @@ function Character(props) {
       <Paragraph textAlign="center">
         Some information to help you prepare: {characterData.preview}
       </Paragraph>
-      <Text>
+      <Text textAlign="center">
         This character information is only for you! You will recieve more
         information about your character on the day of the event. Feel free to
         ask Grant if you have any questions
