@@ -23,8 +23,7 @@ function Login(props) {
       animation={{ type: 'fadeIn', duration: 2000 }}
       pad={{ top: 'xlarge' }}
       style={{ zIndex: '1' }}
-      width="medium"
-      gap="medium"
+      width="large"
     >
       <Heading level="2" textAlign="center">
         Please enter your keyword
@@ -37,7 +36,7 @@ function Login(props) {
           onChange={handleValueChange}
         />
       </Keyboard>
-      <Button primary label="Login" type="submit" onClick={handleClick} />
+      <Button primary label="Login" margin={{top: "small"}} type="submit" onClick={handleClick} />
     </Box>
   );
 }
