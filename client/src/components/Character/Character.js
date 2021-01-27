@@ -5,13 +5,19 @@ function Character(props) {
   const { characterData } = props;
 
   return (
-    <Box align="center" justify="center" flex fill="vertical" pad={"small"}>
+    <Box
+      align="center"
+      justify="center"
+      flex
+      fill="vertical"
+      pad={'small'}
+      textAlign="center"
+    >
       <Heading>{characterData.name}</Heading>
       <Text textAlign="center">How people see you: {characterData.traits}</Text>
       <Paragraph textAlign="center">
         Some information to help you prepare: {characterData.preview}
       </Paragraph>
-
       <Heading level="2" textAlign="center">
         Grant will be posting more imporant information here in the next two
         days. Check back.
@@ -21,7 +27,7 @@ function Character(props) {
         event. Feel free to ask Grant if you have any questions
       </Text>
     </Box>
-    );
+  );
 }
 
 export default Character;

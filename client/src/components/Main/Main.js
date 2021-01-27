@@ -5,6 +5,7 @@ import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
 import MainHeader from '../MainHeader/MainHeader';
+import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
 
