@@ -4,3 +4,7 @@
   font-family: inherit;
   font-style: inherit;
 }
+
+.header__link:hover {
+  color: darkblue;
+}

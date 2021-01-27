@@ -11,8 +11,11 @@ function MainHeader(props) {
       background={'light-5'}
       pad='small'
       align='center'
+      justify='center'
     >
-      <Nav direction="row">
+      <Nav direction="row"
+        align='center'
+      >
         <Link className='header__link' to="/me">
           Character
         </Link>
