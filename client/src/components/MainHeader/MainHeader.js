@@ -5,15 +5,22 @@ import { Link } from '@reach/router';
 function MainHeader(props) {
   const { characterData, onLogoutCharacter } = props;
   return (
-    <Header >
+    <Header>
       <Nav direction="row">
         <Button label="Character">
           <Link to="/me" />
         </Button>
+        {characterData.keyword === 'testing' ? (
+          <Button label="create">
+            <Link to="/testing" />
+          </Button>
+        ) : (
+          <></>
+        )}
         <Button label="Logout" onClick={onLogoutCharacter} />
       </Nav>
     </Header>
-  )
+  );
 }
 
 export default MainHeader;
