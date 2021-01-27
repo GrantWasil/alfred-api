@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Heading, Paragraph, Text, Button } from 'grommet';
+import { Box, Heading, Paragraph, Text } from 'grommet';
 
 function Character(props) {
-  const { characterData, onLogoutCharacter } = props;
+  const { characterData } = props;
 
   return (
-    <Box align="center" justify="center" flex fill="vertical">
+    <Box align="center" justify="center" flex fill="vertical" pad={"small"}>
       <Heading>{characterData.name}</Heading>
       <Text textAlign="center">How people see you: {characterData.traits}</Text>
       <Paragraph textAlign="center">
