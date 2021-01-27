@@ -13,7 +13,7 @@ function CharacterList() {
       background={'light-3'}
     >
       <Heading>Cast List</Heading>
-      <Heading level="3" alignSelf="start">
+      <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>
       <List
@@ -26,7 +26,7 @@ function CharacterList() {
           { name: 'Chris Rowan', description: 'a croupier.' },
         ]}
       />
-      <Heading level="3" alignSelf="start">
+      <Heading level="3" alignSelf="center">
         Locals
       </Heading>
       <List
@@ -53,7 +53,7 @@ function CharacterList() {
           },
         ]}
       />
-      <Heading level="3" alignSelf="start">
+      <Heading level="3" alignSelf="center">
         Police
       </Heading>
       <List
@@ -74,7 +74,7 @@ function CharacterList() {
           },
         ]}
       />
-      <Heading level="3" alignSelf="start">
+      <Heading level="3" alignSelf="center">
         Visitors
       </Heading>
       <List
@@ -127,7 +127,7 @@ function CharacterList() {
           { name: 'Zara Zirconoff', description: 'a starlet.' },
         ]}
       />
-      <Heading level="3" alignSelf="start">
+      <Heading level="3" alignSelf="center">
         Film Crew
       </Heading>
       <List
