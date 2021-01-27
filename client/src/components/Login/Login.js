@@ -36,7 +36,7 @@ function Login(props) {
           onChange={handleValueChange}
         />
       </Keyboard>
-      <Button primary label="Login" margin={{top: "small"}} type="submit" onClick={handleClick} />
+      <Button primary label="Login" margin="medium" type="submit" onClick={handleClick} />
     </Box>
   );
 }
