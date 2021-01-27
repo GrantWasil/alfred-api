@@ -18,7 +18,7 @@ function Main() {
       if (res.character) {
         setCharacterData(res.character);
         setIsLoggedIn(true);
-        navigate('/');
+        navigate('/me');
       }
     });
   }, []);
@@ -38,7 +38,7 @@ function Main() {
         api.getCharacterData().then((res) => {
           setCharacterData(res.character);
           setIsLoggedIn(true);
-          navigate('/');
+          navigate('/me');
         });
       }
     });
@@ -54,10 +54,10 @@ function Main() {
   return (
     <Box flex fill="vertical" align="center" background={'light-3'}>
       <Router>
-        <Login path="/login" onLoginCharacter={handleLoginCharacter} />
+        <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="create" onCreateCharacter={handleCreateCharacter} />
-        <ProtectedRoute
-          path="/"
+        <Character
+          path="/me"
           loggedIn={isLoggedIn}
           component={Character}
           characterData={characterData}

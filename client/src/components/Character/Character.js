@@ -24,7 +24,7 @@ function Character(props) {
       </Text>
       <Button pad={{top: 'medium'}} secondary onClick={onLogoutCharacter} label="Sign Out" />
     </Box>
-  );
+    );
 }
 
 export default Character;
