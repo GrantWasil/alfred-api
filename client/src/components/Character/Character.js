@@ -1,13 +1,11 @@
 import React from 'react';
 import { Box, Heading, Paragraph, Text, Button } from 'grommet';
-import MainHeader from '../MainHeader/MainHeader';
 
 function Character(props) {
   const { characterData, onLogoutCharacter } = props;
 
   return (
     <Box align="center" justify="center" flex fill="vertical">
-      <MainHeader />
       <Heading>{characterData.name}</Heading>
       <Text textAlign="center">How people see you: {characterData.traits}</Text>
       <Paragraph textAlign="center">

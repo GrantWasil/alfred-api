@@ -4,6 +4,7 @@ import { Router, navigate } from '@reach/router';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
+import MainHeader from '../MainHeader/MainHeader';
 import api from '../../utils/Api';
 import './Main.css';
 
@@ -52,6 +53,7 @@ function Main() {
 
   return (
     <Box flex fill="vertical" align="center" background={'light-3'}>
+      <MainHeader characterData={characterData} onLogoutCharacter={handleLogoutCharacter}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="/create" onCreateCharacter={handleCreateCharacter} />
