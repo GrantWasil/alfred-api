@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
-import { Route, useHistory, Switch, Redirect } from 'react-router-dom';
+import { Router, useNavigate } from '@reach/router';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -11,7 +11,7 @@ import './Main.css';
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterData, setCharacterData] = useState({});
-  const history = useHistory();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
@@ -19,10 +19,10 @@ function Main() {
       if (res.character) {
         setCharacterData(res.character);
         setIsLoggedIn(true);
-        history.push('/');
+        navigate('/');
       }
     });
-  }, [history]);
+  }, []);
 
   function handleCreateCharacter(data) {
     api
@@ -39,7 +39,7 @@ function Main() {
         api.getCharacterData().then((res) => {
           setCharacterData(res.character);
           setIsLoggedIn(true);
-          history.push('/');
+          navigate('/');
         });
       }
     });
@@ -49,29 +49,22 @@ function Main() {
     localStorage.removeItem('jwt');
     setIsLoggedIn(false);
     setCharacterData({});
-    history.push('/login');
+    navigate('/login');
   }
 
   return (
-    <Box flex fill="vertical" align="center" background={'light-2'}>
-      <Switch>
-        <Route path="/login">
-          <Login onLoginCharacter={handleLoginCharacter} />
-        </Route>
-        <Route path="/create">
-          <Create onCreateCharacter={handleCreateCharacter} />
-        </Route>
+    <Box flex fill="vertical" align="center" background={'light-3'}>
+      <Router>
+        <Login path="/login" onLoginCharacter={handleLoginCharacter} />
+        <Create path="create" onCreateCharacter={handleCreateCharacter} />
         <ProtectedRoute
-          exact path="/"
+          path="/"
           loggedIn={isLoggedIn}
           component={Character}
           characterData={characterData}
           onLogoutCharacter={handleLogoutCharacter}
         />
-        <Route>
-          { isLoggedIn ? <Redirect to="/" /> : <Redirect to="/login" />}
-        </Route>
-      </Switch>
+      </Router>
     </Box>
   );
 }
