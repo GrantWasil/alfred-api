@@ -58,6 +58,7 @@ function Main() {
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="/create" onCreateCharacter={handleCreateCharacter} />
+        <EventInfo path="/event" />
         <Character
           path="/me"
           loggedIn={isLoggedIn}
@@ -65,7 +66,6 @@ function Main() {
           characterData={characterData}
           onLogoutCharacter={handleLogoutCharacter}
         />
-        <EventInfo path="/info" />
       </Router>
     </Box>
   );

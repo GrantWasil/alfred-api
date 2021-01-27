@@ -13,7 +13,7 @@ function MainHeader(props) {
       align="center"
       justify="center"
     >
-      {characterData ? (
+      {characterData.name ? (
         <Nav direction="row" align="center">
           <Link className="header__link" to="/me">
             Character
