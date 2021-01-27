@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
-import { Router, useNavigate } from '@reach/router';
+import { Router, navigate } from '@reach/router';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -11,7 +11,6 @@ import './Main.css';
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterData, setCharacterData] = useState({});
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
