@@ -10,7 +10,6 @@ function MainHeader(props) {
       fill="horizontal"
       background={'light-5'}
       pad='small'
-      height='medium'
       align='center'
     >
       <Nav direction="row">
