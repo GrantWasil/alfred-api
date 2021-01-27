@@ -3,7 +3,7 @@ import { Header, Button, Nav } from 'grommet';
 import { Link } from '@reach/router';
 
 function MainHeader(props) {
-  const [ characterData, onLogoutCharacter ] = props;
+  const { characterData, onLogoutCharacter } = props;
   return (
     <Header >
       <Nav direction="row">
