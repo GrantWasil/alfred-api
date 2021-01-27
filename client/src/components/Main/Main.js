@@ -4,6 +4,7 @@ import { Router, navigate } from '@reach/router';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
+import CharacterList from '../CharacterList/CharacterList';
 import MainHeader from '../MainHeader/MainHeader';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
@@ -59,6 +60,7 @@ function Main() {
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="/create" onCreateCharacter={handleCreateCharacter} />
         <EventInfo path="/event" />
+        <CharacterList path="/list" />
         <Character
           path="/me"
           loggedIn={isLoggedIn}

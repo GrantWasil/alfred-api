@@ -21,6 +21,9 @@ function MainHeader(props) {
           <Link className="header__link" to="/event">
             Event Info
           </Link>
+          <Link className="header__link" to="/list">
+            Character List
+          </Link>
           {characterData.keyword === 'testing' ? (
             <Link className="header__link" to="/create">
               Create
