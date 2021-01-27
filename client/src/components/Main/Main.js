@@ -4,7 +4,6 @@ import { Router, navigate } from '@reach/router';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import api from '../../utils/Api';
 import './Main.css';
 
@@ -55,7 +54,7 @@ function Main() {
     <Box flex fill="vertical" align="center" background={'light-3'}>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
-        <Create path="create" onCreateCharacter={handleCreateCharacter} />
+        <Create path="/create" onCreateCharacter={handleCreateCharacter} />
         <Character
           path="/me"
           loggedIn={isLoggedIn}
