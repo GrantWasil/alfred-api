@@ -65,6 +65,7 @@ function Main() {
           characterData={characterData}
           onLogoutCharacter={handleLogoutCharacter}
         />
+        <EventInfo path="/info" />
       </Router>
     </Box>
   );
