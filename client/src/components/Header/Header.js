@@ -14,7 +14,6 @@ const Header = (props) => {
     <NavBarContainer {...props}>
       <Logo
         w="100px"
-        color={['white', 'white', 'primary.500', 'primary.500']}
       />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} characterData={characterData} onLogoutCharacter={onLogoutCharacter} />
@@ -67,11 +66,6 @@ const MenuLinks = (props) => {
             onClick={onLogoutCharacter}
             size="sm"
             rounded="md"
-            color={['primary.500', 'primary.500', 'white', 'white']}
-            bg={['white', 'white', 'primary.500', 'primary.500']}
-            _hover={{
-              bg: ['primary.100', 'primary.100', 'primary.600', 'primary.600'],
-            }}
           >
             Logout
           </Button>
@@ -91,8 +85,6 @@ const NavBarContainer = ({ children, ...props }) => {
       w="100%"
       mb={8}
       p={8}
-      bg={['primary.500', 'primary.500', 'transparent', 'transparent']}
-      color={['white', 'white', 'primary.700', 'primary.700']}
       {...props}
     >
       {children}
