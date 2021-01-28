@@ -1,17 +1,10 @@
 import React from 'react';
-import { Box, Heading, List } from 'grommet';
+import { Heading, List } from 'grommet';
+import { Center } from '@chakra-ui/react';
 
 function CharacterList() {
   return (
-    <Box
-      align="center"
-      justify="start"
-      flex
-      pad={'small'}
-      textAlign="center"
-      background={'light-3'}
-    >
-      <Heading>Cast List</Heading>
+    <Center>
       <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>
@@ -140,7 +133,7 @@ function CharacterList() {
           { name: 'Joss "Woody" Woodrow', description: 'camera operator.' },
         ]}
       />
-    </Box>
+    </Center>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Icon } from '@chakra-ui/react';
+import { Flex, Heading, Icon } from '@chakra-ui/react';
 
 const HeaderIcon = (props) => (
   <svg viewBox="0 0 100 100" {...props}>
@@ -11,10 +11,10 @@ const HeaderIcon = (props) => (
 
 function Logo(props) {
   return (
-    <Box {...props}>
+    <Flex {...props}>
       <Icon as={HeaderIcon} h={12} w={12} />
       <Heading size="lg">Alfred</Heading>
-    </Box>
+    </Flex>
   );
 }
 

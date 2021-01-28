@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Button, TextInput, Heading, Keyboard } from 'grommet';
+import { Button, TextInput, Heading, Keyboard } from 'grommet';
 import './Login.css';
+import { Center } from '@chakra-ui/react';
 
 function Login(props) {
   const [value, setValue] = useState('');
@@ -16,15 +17,7 @@ function Login(props) {
   }
 
   return (
-    <Box
-      tag="section"
-      align="center"
-      justify="center"
-      animation={{ type: 'fadeIn', duration: 2000 }}
-      pad={{ top: 'xlarge' }}
-      style={{ zIndex: '1' }}
-      width="large"
-    >
+    <Center>
       <Heading level="2" textAlign="center">
         Please enter your keyword
       </Heading>
@@ -37,7 +30,7 @@ function Login(props) {
         />
       </Keyboard>
       <Button primary label="Login" margin="medium" type="submit" onClick={handleClick} />
-    </Box>
+    </Center>
   );
 }
 

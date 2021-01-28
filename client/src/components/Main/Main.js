@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Box } from 'grommet';
 import { Router, navigate } from '@reach/router';
 import io from 'socket.io-client';
 import Login from '../Login/Login';
