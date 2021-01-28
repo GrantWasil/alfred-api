@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Paragraph, Heading } from 'grommet';
+import { Paragraph, Heading } from 'grommet';
+import { Box } from '@chakra-ui/react';
 
 function EventInfo() {
   return (

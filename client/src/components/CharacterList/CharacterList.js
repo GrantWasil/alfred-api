@@ -1,139 +1,83 @@
 import React from 'react';
-import { Heading, List } from 'grommet';
-import { Center } from '@chakra-ui/react';
+import { Heading } from 'grommet';
+import { Box, List, ListItem } from '@chakra-ui/react';
 
 function CharacterList() {
   return (
-    <Center>
+    <Box>
       <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>
-      <List
-        primaryKey="name"
-        secondaryKey="description"
-        data={[
-          { name: 'Sam Riley', description: 'the casino manager.' },
-          { name: 'Jo Knowall', description: 'a croupier.' },
-          { name: 'Felicity Phillips', description: 'a cabaret dancer.' },
-          { name: 'Chris Rowan', description: 'a croupier.' },
-        ]}
-      />
+      <List>
+        <ListItem>Sam Riley: The casino manager.</ListItem>
+        <ListItem>Jo Knowall: A croupier.</ListItem>
+        <ListItem>Chris Rowan: A croupier.</ListItem>
+        <ListItem>Felicity Phillips: A cabaret dancer.</ListItem>
+      </List>
       <Heading level="3" alignSelf="center">
         Locals
       </Heading>
-      <List
-        primaryKey="name"
-        secondaryKey="description"
-        data={[
-          { name: 'Ralph Anderson', description: 'local nightclub bouncer.' },
-          {
-            name: 'Pat Bullitt',
-            description: 'ex-army, now runs a security firm.',
-          },
-          {
-            name: 'Ashley Bunsen',
-            description: 'a scientist, regular visitor to the casino.',
-          },
-          {
-            name: 'Countess Alice de Ville',
-            description: 'wealthy, beautiful and widowed.',
-          },
-          { name: 'Donovan Jones', description: 'a well-known Bohemian poet.' },
-          {
-            name: 'Dominique Renard',
-            description: 'the owner of an international shipping business.',
-          },
-        ]}
-      />
+      <List>
+        <ListItem>Ralph Anderson: Local nightclub bouncer.</ListItem>
+        <ListItem>Pat Bullitt: Ex-army, now runs a security firm.</ListItem>
+        <ListItem>
+          Ashley Bunsen: A scientist, regular visitor to the casino.
+        </ListItem>
+        <ListItem>
+          Countess Alice de Ville: Wealthy, beautiful and widowed.
+        </ListItem>
+        <ListItem>Donovan Jones: A well-known Bohemian poet.</ListItem>
+        <ListItem>
+          Dominique Renard: The owner of an international shipping business.
+        </ListItem>
+      </List>
       <Heading level="3" alignSelf="center">
         Police
       </Heading>
-      <List
-        primaryKey="name"
-        secondaryKey="description"
-        data={[
-          {
-            name: 'Sergeant Armand Blanc',
-            description: 'a police detective assisting Inspector Leclou',
-          },
-          {
-            name: 'Detective Natalie Bois',
-            description: 'a police detective assisting Inspector Leclou',
-          },
-          {
-            name: 'Inspector Freddie Leclou',
-            description: 'an experienced police detective.',
-          },
-        ]}
-      />
+      <List>
+        <ListItem>
+          Inspector Freddie Leclou: An experienced police detective
+        </ListItem>
+        <ListItem>
+          Sergeant Armand Blanc: A police detective assisting Inspector Leclou
+        </ListItem>
+        <ListItem>
+          Detective Natalie Bois: A police detective assisting Inspector Leclou
+        </ListItem>
+      </List>
       <Heading level="3" alignSelf="center">
         Visitors
       </Heading>
-      <List
-        primaryKey="name"
-        secondaryKey="description"
-        data={[
-          {
-            name: 'Jack Bland',
-            description:
-              "the name's Bland; Jack Bland. An international shipping operative.",
-          },
-          {
-            name: 'Lord James T. Burke',
-            description: 'a rich English playboy.',
-          },
-          {
-            name: 'Lady Matilda Burke',
-            description: 'younger sister of Lord James.',
-          },
-          {
-            name: 'Andre Couvert',
-            description: 'a tourist en route to Switzerland.',
-          },
-          {
-            name: 'Eva Goodbody',
-            description: 'a freelance reporter from New York.',
-          },
-          {
-            name: 'Alex Kirk',
-            description: 'a former racing driver and minor celebrity.',
-          },
-          {
-            name: 'Selina Skye',
-            description: 'a successful jewellery designer.',
-          },
-          {
-            name: 'John Smith',
-            description:
-              'rich tourist rumored to be a millionaire lottery winner.',
-          },
-          { name: 'Anna Upanova', description: 'a wealthy lady of leisure.' },
-          {
-            name: 'Lucia Venditti',
-            description: 'Italian tourist, here on honeymoon.',
-          },
-          {
-            name: 'Valentino Venditti',
-            description: 'Italian tourist, here on honeymoon.',
-          },
-          { name: 'Zara Zirconoff', description: 'a starlet.' },
-        ]}
-      />
+      <List>
+        <ListItem>
+          Jack Bland: The name's Bland; Jack Bland. An international shipping
+          operative.
+        </ListItem>
+        <ListItem>Lord James T. Burke: A rich English playboy.</ListItem>
+        <ListItem>Lady Matilda Burke: Younger sister of Lord James.</ListItem>
+        <ListItem>Andre Couvert: A tourist en route to Switzerland.</ListItem>
+        <ListItem>Eva Goodbody: A freelance reporter from New York.</ListItem>
+        <ListItem>
+          Alex Kirk: A former racing driver and minor celebrity.
+        </ListItem>
+        <ListItem>Selina Skye: A successful jewellery designer.</ListItem>
+        <ListItem>
+          John Smith: A rich tourist rumored to be a millionaire lottery winner.
+        </ListItem>
+        <ListItem>Anna Upanova: A wealthy lady of leisure.</ListItem>
+        <ListItem>Zara Zirconoff: A starlet.</ListItem>
+      </List>
       <Heading level="3" alignSelf="center">
         Film Crew
       </Heading>
-      <List
-        primaryKey="name"
-        secondaryKey="description"
-        data={[
-          { name: 'Drew Daniels', description: 'sound engineer.' },
-          { name: 'Sabrina Devereux', description: 'assistant to George Neville.' },
-          { name: 'George Neville', description: 'director of the film crew.' },
-          { name: 'Sandy Stone', description: 'journalist and presenter.' },
-          { name: 'Joss "Woody" Woodrow', description: 'camera operator.' },
-        ]}
-      />
-    </Center>
+      <List>
+        <ListItem>George Neville: Director of the film crew.</ListItem>
+        <ListItem>Drew Daniels: Sound engineer.</ListItem>
+        <ListItem>Sabrina Devereux: Assistant to George Neville.</ListItem>
+        <ListItem>Sandy Stone: Journalist and presenter.</ListItem>
+        <ListItem>Joss "Woody" Woodrow: Camera operator.</ListItem>
+      </List>
+    </Box>
   );
 }
 

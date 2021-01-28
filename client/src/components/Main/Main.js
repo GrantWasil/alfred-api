@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
+import { Box } from '@chakra-ui/react';
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -62,7 +63,7 @@ function Main() {
   }
 
   return (
-    <>
+    <Box>
       <Header characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
@@ -77,7 +78,7 @@ function Main() {
           onLogoutCharacter={handleLogoutCharacter}
         />
       </Router>
-    </>
+    </Box>
   );
 }
 

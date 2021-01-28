@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Box, Form, FormField, TextInput, TextArea, Button } from 'grommet';
+import { Form, FormField, TextInput, TextArea, Button } from 'grommet';
 import './Create.css';
-import { Center } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 function Create(props) {
   const { onCreateCharacter } = props;
   const [ formData, changeFormData ] = useState({});
   return (
-    <Center>
+    <Box>
       <Form
         value={formData}
         onChange={(nextValue) => changeFormData(nextValue)}
@@ -35,7 +35,7 @@ function Create(props) {
           <Button type="reset" label="Reset" />
         </Box>
       </Form>
-    </Center>
+    </Box>
   );
 }
 
