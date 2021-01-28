@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@reach/router';
-import { Flex, Box, Icon, Button, Text } from '@chakra-ui/react';
-import { CloseIcon, MenuIcon } from '@chakra-ui/icons';
+import { Flex, Box, Icon, Button, Text, Heading } from '@chakra-ui/react';
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import './Header.css';
 
 const HeaderIcon = (props) => (
@@ -45,9 +45,10 @@ function Header(props) {
     >
       <Flex align="center">
         <Icon as={HeaderIcon} />
+        <Heading as="h3" size="lg">Alfred</Heading>
       </Flex>
       <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
-        {show ? <CloseIcon /> : <MenuIcon />}
+        {show ? <CloseIcon /> : <HamburgerIcon />}
       </Box>
       <Box
         display={{ base: show ? 'block' : 'none', md: 'block' }}
