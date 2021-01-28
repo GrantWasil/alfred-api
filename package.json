@@ -27,6 +27,11 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.1.6",
+    "@chakra-ui/theme": "^1.4.1",
+    "@chakra-ui/theme-tools": "^1.0.3",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "celebrate": "^13.0.4",
@@ -35,9 +40,11 @@
     "express": "^4.17.1",
     "express-rate-limit": "^5.2.3",
     "express-winston": "^4.0.5",
+    "framer-motion": "^3.2.2-rc.1",
     "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.13",
+    "react-icons": "^4.1.0",
     "socket.io": "^3.1.0",
     "validator": "^13.5.2",
     "winston": "^3.3.3"
