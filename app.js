@@ -23,7 +23,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 io.on('connection', (socket) => {
-  console.log('New client connected');
   socket.emit('status', true);
   socket.on('disconnect', () => {
     console.log('Client disconnected');
@@ -47,3 +46,4 @@ app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT || 3001);
+server.listen(PORT || 3001);
