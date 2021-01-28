@@ -9,7 +9,6 @@ function Character(props) {
       align="center"
       justify="center"
       flex
-      fill="vertical"
       pad={'small'}
       textAlign="center"
     >

@@ -7,7 +7,6 @@ function CharacterList() {
       align="center"
       justify="start"
       flex
-      fill="vertical"
       pad={'small'}
       textAlign="center"
       background={'light-3'}
