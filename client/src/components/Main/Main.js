@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
 import { Router, navigate } from '@reach/router';
-import socketIoClient from 'socket.io-client';
+import io from 'socket.io-client';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -10,7 +10,6 @@ import MainHeader from '../MainHeader/MainHeader';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
-const ENDPOINT = "http://localhost:3001";
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,7 +28,7 @@ function Main() {
   }, []);
 
   React.useEffect(() => {
-    const socket = socketIoClient(ENDPOINT);
+    const socket = io();
     socket.on('status', data => {
       setSocketStatus(data);
     });
