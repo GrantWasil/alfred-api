@@ -45,5 +45,4 @@ app.get('*', (req, res) => {
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(PORT || 3001);
 server.listen(PORT || 3001);
