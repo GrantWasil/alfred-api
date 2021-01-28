@@ -6,7 +6,7 @@ import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
 import CharacterList from '../CharacterList/CharacterList';
-import MainHeader from '../MainHeader/MainHeader';
+import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
@@ -64,7 +64,7 @@ function Main() {
 
   return (
     <Box flex fill="vertical" align="center" background={'light-3'}>
-      <MainHeader characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
+      <Header characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="/create" onCreateCharacter={handleCreateCharacter} />
