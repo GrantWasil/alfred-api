@@ -12,7 +12,7 @@ const Header = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo direction="row"/>
+      <Logo direction="row" align="center" />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks
         isOpen={isOpen}
