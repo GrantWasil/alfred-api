@@ -1,10 +1,10 @@
 import React from 'react';
-import { Header, Button, Nav } from 'grommet';
+import { Header, Button, Nav, Anchor } from 'grommet';
 import { Link } from '@reach/router';
 import './MainHeader.css';
 
 function MainHeader(props) {
-  const { characterData, onLogoutCharacter } = props;
+  const { characterData, onLogoutCharacter, socketStatus } = props;
   return (
     <Header
       fill="horizontal"
@@ -32,6 +32,7 @@ function MainHeader(props) {
             <></>
           )}
           <Button label="Logout" onClick={onLogoutCharacter} />
+          {socketStatus ? <Anchor>Online</Anchor> : <Anchor>Offline</Anchor>}
         </Nav>
       ) : (
         <> </>

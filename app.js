@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 io.on('connection', (socket) => {
   console.log('New client connected');
+  socket.emit('status', true);
   socket.on('disconnect', () => {
     console.log('Client disconnected');
   });

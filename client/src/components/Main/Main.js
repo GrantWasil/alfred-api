@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box } from 'grommet';
 import { Router, navigate } from '@reach/router';
+import socketIoClient from 'socket.io-client';
 import Login from '../Login/Login';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
@@ -9,10 +10,12 @@ import MainHeader from '../MainHeader/MainHeader';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
+const ENDPOINT = "http://localhost:3001";
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterData, setCharacterData] = useState({});
+  const [socketStatus, setSocketStatus] = useState(false);
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
@@ -22,6 +25,13 @@ function Main() {
         setIsLoggedIn(true);
         navigate('/me');
       }
+    });
+  }, []);
+
+  React.useEffect(() => {
+    const socket = socketIoClient(ENDPOINT);
+    socket.on('status', data => {
+      setSocketStatus(data);
     });
   }, []);
 
@@ -55,7 +65,7 @@ function Main() {
 
   return (
     <Box flex fill="vertical" align="center" background={'light-3'}>
-      <MainHeader characterData={characterData} onLogoutCharacter={handleLogoutCharacter}/>
+      <MainHeader characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
         <Create path="/create" onCreateCharacter={handleCreateCharacter} />
