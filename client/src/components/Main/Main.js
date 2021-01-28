@@ -63,7 +63,7 @@ function Main() {
   }
 
   return (
-    <Box flex fill="vertical" align="center" background={'light-3'}>
+    <>
       <Header characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
@@ -78,7 +78,7 @@ function Main() {
           onLogoutCharacter={handleLogoutCharacter}
         />
       </Router>
-    </Box>
+    </>
   );
 }
 

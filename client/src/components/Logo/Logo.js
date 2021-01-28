@@ -12,7 +12,7 @@ const HeaderIcon = (props) => (
 function Logo(props) {
   return (
     <Box {...props}>
-      <Icon as={HeaderIcon} h={36} w={36} />
+      <Icon as={HeaderIcon} h={12} w={12} />
       <Heading size="lg">Alfred</Heading>
     </Box>
   );
