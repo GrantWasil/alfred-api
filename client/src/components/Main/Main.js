@@ -63,7 +63,9 @@ function Main() {
   }
 
   return (
-    <Box>
+    <Box
+      justifyContent="center"
+    >
       <Header characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
       <Router>
         <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
