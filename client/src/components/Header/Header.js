@@ -12,11 +12,13 @@ const Header = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo
-        w="100px"
-      />
+      <Logo w="180px" />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} characterData={characterData} onLogoutCharacter={onLogoutCharacter} />
+      <MenuLinks
+        isOpen={isOpen}
+        characterData={characterData}
+        onLogoutCharacter={onLogoutCharacter}
+      />
     </NavBarContainer>
   );
 };
@@ -46,31 +48,31 @@ const MenuLinks = (props) => {
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
       flexBasis={{ base: '100%', md: 'auto' }}
     >
-      <Stack
-        spacing={8}
-        align="center"
-        justify={['center', 'space-between', 'flex-end', 'flex-end']}
-        direction={['column', 'row', 'row', 'row']}
-        pt={[4, 4, 0, 0]}
-      >
-        <MenuItem to="/me">Your Character</MenuItem>
-        <MenuItem to="/event">Event Info</MenuItem>
-        <MenuItem to="/list">Guest List </MenuItem>
-        {characterData.keyword === 'testing' ? (
-          <MenuItem to="/create">Create </MenuItem>
-        ) : (
-          <> </>
-        )}
-        <MenuItem to="/login" isLast>
-          <Button
-            onClick={onLogoutCharacter}
-            size="sm"
-            rounded="md"
-          >
-            Logout
-          </Button>
-        </MenuItem>
-      </Stack>
+      {characterData.name ? (
+        <Stack
+          spacing={8}
+          align="center"
+          justify={['center', 'space-between', 'flex-end', 'flex-end']}
+          direction={['column', 'row', 'row', 'row']}
+          pt={[4, 4, 0, 0]}
+        >
+          <MenuItem to="/me">Your Character</MenuItem>
+          <MenuItem to="/event">Event Info</MenuItem>
+          <MenuItem to="/list">Guest List </MenuItem>
+          {characterData.keyword === 'testing' ? (
+            <MenuItem to="/create">Create </MenuItem>
+          ) : (
+            <> </>
+          )}
+          <MenuItem to="/login" isLast>
+            <Button onClick={onLogoutCharacter} size="sm" rounded="md">
+              Logout
+            </Button>
+          </MenuItem>
+        </Stack>
+      ) : (
+        <> </>
+      )}
     </Box>
   );
 };
