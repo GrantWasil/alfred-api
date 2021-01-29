@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, TextInput, Heading, Keyboard } from 'grommet';
+import { Keyboard } from 'grommet';
 import './Login.css';
-import { Box } from '@chakra-ui/react';
+import { Flex, Heading, Input, Button} from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 function Login(props) {
   const [value, setValue] = useState('');
@@ -17,20 +18,22 @@ function Login(props) {
   }
 
   return (
-    <Box>
-      <Heading level="2" textAlign="center">
+    <Flex
+      alignItems="center"
+    >
+      <Heading as="h2" size="xlg">
         Please enter your keyword
       </Heading>
       <Keyboard onEnter={handleClick}>
-        <TextInput
+        <Input
           placeholder="Keyword"
           textAlign="center"
           value={value}
           onChange={handleValueChange}
         />
       </Keyboard>
-      <Button primary label="Login" margin="medium" type="submit" onClick={handleClick} />
-    </Box>
+      <Button onClick={handleClick} rightIcon={<ArrowForwardIcon />}>Login</Button>
+    </Flex>
   );
 }
 
