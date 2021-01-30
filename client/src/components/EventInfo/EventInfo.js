@@ -7,6 +7,7 @@ function EventInfo() {
       justifyContent="center"
       alignContent="center"
       textAlign="center"
+      flexDirection="column"
     >
       <Heading>Casino Fatale</Heading>
       <Heading as="h2" size="2xl" alignSelf="start">
