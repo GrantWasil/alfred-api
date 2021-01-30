@@ -5,19 +5,19 @@ import { Box, List, ListItem } from '@chakra-ui/react';
 function CharacterList() {
   return (
     <Box>
-      <Heading level="3" alignSelf="center" my={2}>
+      <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>
-      <List>
+      <List pb={2}>
         <ListItem>Sam Riley: The casino manager.</ListItem>
         <ListItem>Jo Knowall: A croupier.</ListItem>
         <ListItem>Chris Rowan: A croupier.</ListItem>
         <ListItem>Felicity Phillips: A cabaret dancer.</ListItem>
       </List>
-      <Heading level="3" alignSelf="center" my={2}>
+      <Heading level="3" alignSelf="center">
         Locals
       </Heading>
-      <List>
+      <List pb={2}>
         <ListItem>Ralph Anderson: Local nightclub bouncer.</ListItem>
         <ListItem>Pat Bullitt: Ex-army, now runs a security firm.</ListItem>
         <ListItem>
@@ -31,10 +31,10 @@ function CharacterList() {
           Dominique Renard: The owner of an international shipping business.
         </ListItem>
       </List>
-      <Heading level="3" alignSelf="center" my={2}>
+      <Heading level="3" alignSelf="center">
         Police
       </Heading>
-      <List>
+      <List pb={2}>
         <ListItem>
           Inspector Freddie Leclou: An experienced police detective
         </ListItem>
@@ -45,10 +45,10 @@ function CharacterList() {
           Detective Natalie Bois: A police detective assisting Inspector Leclou
         </ListItem>
       </List>
-      <Heading level="3" alignSelf="center" my={2}>
+      <Heading level="3" alignSelf="center">
         Visitors
       </Heading>
-      <List>
+      <List pb={2}>
         <ListItem>
           Jack Bland: The name's Bland; Jack Bland. An international shipping
           operative.
@@ -67,10 +67,10 @@ function CharacterList() {
         <ListItem>Anna Upanova: A wealthy lady of leisure.</ListItem>
         <ListItem>Zara Zirconoff: A starlet.</ListItem>
       </List>
-      <Heading level="3" alignSelf="center" my={2}>
+      <Heading level="3" alignSelf="center">
         Film Crew
       </Heading>
-      <List>
+      <List pb={2}>
         <ListItem>George Neville: Director of the film crew.</ListItem>
         <ListItem>Drew Daniels: Sound engineer.</ListItem>
         <ListItem>Sabrina Devereux: Assistant to George Neville.</ListItem>
