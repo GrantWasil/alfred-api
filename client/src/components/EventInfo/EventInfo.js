@@ -8,9 +8,10 @@ function EventInfo() {
       alignContent="space-between"
       textAlign="center"
       flexDirection="column"
+      minH="70vh"
     >
       <Heading>Casino Fatale</Heading>
-      <Heading as="h3" size="xl" alignSelf="start">
+      <Heading as="h4" size="l" alignSelf="start">
         The Setting
       </Heading>
       <Spacer />
