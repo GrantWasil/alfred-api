@@ -9,7 +9,7 @@ import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import api from '../../utils/Api';
 import './Main.css';
-import { Box } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,7 +29,7 @@ function Main() {
 
   React.useEffect(() => {
     const socket = io();
-    socket.on('status', data => {
+    socket.on('status', (data) => {
       setSocketStatus(data);
     });
   }, []);
@@ -63,23 +63,31 @@ function Main() {
   }
 
   return (
-    <Box
-      justifyContent="center"
-    >
-      <Header characterData={characterData} onLogoutCharacter={handleLogoutCharacter} socketStatus={socketStatus}/>
-      <Router>
-        <Login default path="/login" onLoginCharacter={handleLoginCharacter} />
-        <Create path="/create" onCreateCharacter={handleCreateCharacter} />
-        <EventInfo path="/event" />
-        <CharacterList path="/list" />
-        <Character
-          path="/me"
-          loggedIn={isLoggedIn}
-          component={Character}
-          characterData={characterData}
-          onLogoutCharacter={handleLogoutCharacter}
-        />
-      </Router>
+    <Box justifyContent="center">
+      <Header
+        characterData={characterData}
+        onLogoutCharacter={handleLogoutCharacter}
+        socketStatus={socketStatus}
+      />
+      <Container centerContent>
+        <Router>
+          <Login
+            default
+            path="/login"
+            onLoginCharacter={handleLoginCharacter}
+          />
+          <Create path="/create" onCreateCharacter={handleCreateCharacter} />
+          <EventInfo path="/event" />
+          <CharacterList path="/list" />
+          <Character
+            path="/me"
+            loggedIn={isLoggedIn}
+            component={Character}
+            characterData={characterData}
+            onLogoutCharacter={handleLogoutCharacter}
+          />
+        </Router>
+      </Container>
     </Box>
   );
 }
