@@ -20,6 +20,8 @@ function Login(props) {
   return (
     <Flex
       alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
     >
       <Heading as="h2" size="xlg">
         Please enter your keyword
