@@ -10,7 +10,7 @@ function EventInfo() {
       flexDirection="column"
       h="100%"
     >
-      <Heading as="h1">Casino Fatale</Heading>
+      <Heading as="h1" my={3}>Casino Fatale</Heading>
       <Heading as="h2" size="l" alignSelf="start">The setting</Heading>
       <Text as="p" my={3}>
         The banks of the River Seine in Paris; a dark night, and glittering

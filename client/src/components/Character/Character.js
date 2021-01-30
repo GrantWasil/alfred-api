@@ -12,11 +12,11 @@ function Character(props) {
       flexDirection="column"
     >
       <Heading>{characterData.name}</Heading>
-      <Text>How people see you: {characterData.traits}</Text>
-      <Text as="p">
+      <Text my={3}>How people see you: {characterData.traits}</Text>
+      <Text as="p" my={3}>
         Some information to help you prepare: {characterData.preview}
       </Text>
-      <Text as="p">
+      <Text as="p" my={3}>
         This character information is only for you! You will recieve more
         information about your character on the day of the event. Feel free to
         ask Grant if you have any questions

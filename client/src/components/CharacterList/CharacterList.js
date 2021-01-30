@@ -5,7 +5,7 @@ import { Box, List, ListItem } from '@chakra-ui/react';
 function CharacterList() {
   return (
     <Box>
-      <Heading level="3" alignSelf="center">
+      <Heading level="3" alignSelf="center" my={2}>
         Casino Staff
       </Heading>
       <List>
@@ -14,7 +14,7 @@ function CharacterList() {
         <ListItem>Chris Rowan: A croupier.</ListItem>
         <ListItem>Felicity Phillips: A cabaret dancer.</ListItem>
       </List>
-      <Heading level="3" alignSelf="center">
+      <Heading level="3" alignSelf="center" my={2}>
         Locals
       </Heading>
       <List>
@@ -31,7 +31,7 @@ function CharacterList() {
           Dominique Renard: The owner of an international shipping business.
         </ListItem>
       </List>
-      <Heading level="3" alignSelf="center">
+      <Heading level="3" alignSelf="center" my={2}>
         Police
       </Heading>
       <List>
@@ -45,7 +45,7 @@ function CharacterList() {
           Detective Natalie Bois: A police detective assisting Inspector Leclou
         </ListItem>
       </List>
-      <Heading level="3" alignSelf="center">
+      <Heading level="3" alignSelf="center" my={2}>
         Visitors
       </Heading>
       <List>
@@ -67,7 +67,7 @@ function CharacterList() {
         <ListItem>Anna Upanova: A wealthy lady of leisure.</ListItem>
         <ListItem>Zara Zirconoff: A starlet.</ListItem>
       </List>
-      <Heading level="3" alignSelf="center">
+      <Heading level="3" alignSelf="center" my={2}>
         Film Crew
       </Heading>
       <List>
