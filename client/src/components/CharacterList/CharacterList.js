@@ -8,7 +8,7 @@ function CharacterList() {
       <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>
-      <List pb={2}>
+      <List pb={3}>
         <ListItem>Sam Riley: The casino manager.</ListItem>
         <ListItem>Jo Knowall: A croupier.</ListItem>
         <ListItem>Chris Rowan: A croupier.</ListItem>
@@ -34,7 +34,7 @@ function CharacterList() {
       <Heading level="3" alignSelf="center">
         Police
       </Heading>
-      <List pb={2}>
+      <List pb={3}>
         <ListItem>
           Inspector Freddie Leclou: An experienced police detective
         </ListItem>
@@ -48,7 +48,7 @@ function CharacterList() {
       <Heading level="3" alignSelf="center">
         Visitors
       </Heading>
-      <List pb={2}>
+      <List pb={3}>
         <ListItem>
           Jack Bland: The name's Bland; Jack Bland. An international shipping
           operative.
@@ -70,7 +70,7 @@ function CharacterList() {
       <Heading level="3" alignSelf="center">
         Film Crew
       </Heading>
-      <List pb={2}>
+      <List pb={3}>
         <ListItem>George Neville: Director of the film crew.</ListItem>
         <ListItem>Drew Daniels: Sound engineer.</ListItem>
         <ListItem>Sabrina Devereux: Assistant to George Neville.</ListItem>
