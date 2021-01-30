@@ -7,7 +7,7 @@ function Character(props) {
   return (
     <Flex
       textAlign="center"
-      alignContent="center"
+      alignContent="space-between"
       justifyContent="center"
       flexDirection="column"
     >

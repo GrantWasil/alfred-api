@@ -5,12 +5,12 @@ function EventInfo() {
   return (
     <Flex
       justifyContent="center"
-      alignContent="center"
+      alignContent="space-between"
       textAlign="center"
       flexDirection="column"
     >
       <Heading>Casino Fatale</Heading>
-      <Heading as="h2" size="2xl" alignSelf="start">
+      <Heading as="h3" size="l" alignSelf="start">
         The Setting
       </Heading>
       <Text as="p">
