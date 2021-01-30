@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, Text, Spacer } from '@chakra-ui/react';
 
 function EventInfo() {
   return (
@@ -10,9 +10,10 @@ function EventInfo() {
       flexDirection="column"
     >
       <Heading>Casino Fatale</Heading>
-      <Heading as="h3" size="l" alignSelf="start">
+      <Heading as="h3" size="xl" alignSelf="start">
         The Setting
       </Heading>
+      <Spacer />
       <Text as="p">
         The banks of the River Seine in Paris; a dark night, and glittering
         casino lights. The wealthy of Paris, the talented, the brilliant... and
@@ -20,11 +21,13 @@ function EventInfo() {
         Hotel D’Etoile to take part in a charity auction for the local
         orphanage, and you are about to join them!
       </Text>
+      <Spacer />
       <Text as="p">
         Money will change hands, reputations will be made and lost, and intrigue
         will thicken, as wealth, crime and politics come together to play...
         Welcome to Casino Fatale!
       </Text>
+      <Spacer />
       <Text as="p">
         “You are warmly invited to come and spend lots of money in the
         name of charity at Hotel D’Etoile. We are holding a charity auction for
