@@ -1,24 +1,27 @@
 import React from 'react';
-import { Heading, Paragraph, Text } from 'grommet';
-import { Box } from '@chakra-ui/react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 
 function Character(props) {
   const { characterData } = props;
 
   return (
-    <Box
+    <Flex
+      textAlign="center"
+      alignContent="center"
+      justifyContent="center"
+      flexDirection="column"
     >
       <Heading>{characterData.name}</Heading>
-      <Text textAlign="center">How people see you: {characterData.traits}</Text>
-      <Paragraph textAlign="center">
+      <Text>How people see you: {characterData.traits}</Text>
+      <Text as="p">
         Some information to help you prepare: {characterData.preview}
-      </Paragraph>
-      <Text textAlign="center">
+      </Text>
+      <Text as="p">
         This character information is only for you! You will recieve more
         information about your character on the day of the event. Feel free to
         ask Grant if you have any questions
       </Text>
-    </Box>
+    </Flex>
   );
 }
 
