@@ -1,41 +1,59 @@
 import React, { useState } from 'react';
-import { Form, FormField, TextInput, TextArea, Button } from 'grommet';
+import { Input, Button,  Box, Stack } from '@chakra-ui/react';
 import './Create.css';
-import { Box } from '@chakra-ui/react';
 
 function Create(props) {
   const { onCreateCharacter } = props;
-  const [ formData, changeFormData ] = useState({});
+  const [keyword, setKeyword] = useState('');
+  const [name, setName] = useState('');
+  const [traits, setTraits] = useState('');
+  const [preview, setPreview] = useState('');
+
+  function onKeywordChange(e) {
+    setKeyword(e.target.value);
+  }
+
+  function onNameChange(e) {
+    setName(e.target.value);
+  }
+
+  function onTraitsChange(e) {
+    setTraits(e.target.value);
+  }
+
+  function onPreviewChange(e) {
+    setPreview(e.target.value);
+  }
+
+  function onReset() {
+    setKeyword("");
+    setName("");
+    setTraits("");
+    setPreview("");
+  }
+
+  function onSubmit() {
+    const data = {
+      keyword,
+      name,
+      traits,
+      preview
+    }
+    onCreateCharacter(data)
+    onReset();
+  }
+
   return (
-    <Box>
-      <Form
-        value={formData}
-        onChange={(nextValue) => changeFormData(nextValue)}
-        onReset={() => changeFormData({})}
-        onSubmit={(formData) => {
-          const data = formData.value;
-          console.log(data);
-          onCreateCharacter(data)
-        }}
-      >
-        <FormField name="keyword" label="Keyword" htmlFor="text-keyword-id">
-          <TextInput id="text-keyword-id" name="keyword" />
-        </FormField>
-        <FormField name="name" label="Name" htmlFor="text-name-id">
-          <TextInput id="text-name-id" name="name" />
-        </FormField>
-        <FormField name="traits" label="Traits" htmlFor="text-traits-id">
-          <TextInput id="text-traits-id" name="traits" />
-        </FormField>
-        <FormField name="preview" label="Preview" htmlFor="text-preview-id">
-          <TextArea id="text-preview-id" name="preview" />
-        </FormField>
-        <Box direction="row" gap="medium">
-          <Button type="submit" primary label="Submit" />
-          <Button type="reset" label="Reset" />
-        </Box>
-      </Form>
-    </Box>
+    <Stack spacing={3}>
+      <Input placeholder="keyword" value={keyword} onChange={onKeywordChange} />
+      <Input placeholder="name" value={name} onChange={onNameChange} />
+      <Input placeholder="traits" value={traits} onChange={onTraitsChange} />
+      <Input placeholder="preview" value={preview} onChange={onPreviewChange} />
+      <Box direction="row" gap="medium">
+        <Button type="submit" primary label="Submit" onClick={onSubmit} />
+        <Button type="reset" label="Reset" onClick={onReset} />
+      </Box>
+    </Stack>
   );
 }
 
