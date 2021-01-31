@@ -34,7 +34,7 @@ function Login(props) {
           onChange={handleValueChange}
         />
       </Keyboard>
-      <Button onClick={handleClick} rightIcon={<ArrowForwardIcon />}>Login</Button>
+      <Button onClick={handleClick} colorScheme="green" rightIcon={<ArrowForwardIcon />}>Login</Button>
     </Flex>
   );
 }
