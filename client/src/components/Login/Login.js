@@ -35,7 +35,7 @@ function Login(props) {
           my={3}
         />
       </Keyboard>
-      <Button onClick={handleClick} colorScheme="green" rightIcon={<ArrowForwardIcon />}>Login</Button>
+      <Button onClick={handleClick} colorScheme="teal" rightIcon={<ArrowForwardIcon />}>Login</Button>
     </Flex>
   );
 }
