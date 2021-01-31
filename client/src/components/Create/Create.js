@@ -50,8 +50,8 @@ function Create(props) {
       <Input placeholder="traits" value={traits} onChange={onTraitsChange} />
       <Input placeholder="preview" value={preview} onChange={onPreviewChange} />
       <Box direction="row" gap="medium">
-        <Button type="submit" primary label="Submit" onClick={onSubmit} />
-        <Button type="reset" label="Reset" onClick={onReset} />
+        <Button type="submit" primary label="Submit" colorScheme="green" onClick={onSubmit}>Submit</Button>
+        <Button type="reset" label="Reset" colorScheme="red" onClick={onReset}>Reset</Button>
       </Box>
     </Stack>
   );
