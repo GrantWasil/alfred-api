@@ -32,6 +32,7 @@ function Login(props) {
           textAlign="center"
           value={value}
           onChange={handleValueChange}
+          my={3}
         />
       </Keyboard>
       <Button onClick={handleClick} colorScheme="green" rightIcon={<ArrowForwardIcon />}>Login</Button>
