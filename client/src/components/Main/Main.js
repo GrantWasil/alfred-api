@@ -8,6 +8,7 @@ import CharacterList from '../CharacterList/CharacterList';
 import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import Admin from '../Admin/Admin';
+import Search from '../Search/Search';
 import api from '../../utils/Api';
 import './Main.css';
 import { Box, Container } from '@chakra-ui/react';
@@ -17,6 +18,7 @@ function Main() {
   const [characterData, setCharacterData] = useState({});
   const [socketStatus, setSocketStatus] = useState(false);
   const [gamemode, setGamemode] = useState(1);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const socket = io();
 
   React.useEffect(() => {
@@ -27,6 +29,9 @@ function Main() {
         setIsLoggedIn(true);
         navigate('/me');
       }
+    });
+    api.getAllCharacters().then((res) => {
+      console.log(res);
     });
   }, []);
 
@@ -114,6 +119,7 @@ function Main() {
           />
         </Router>
       </Container>
+      <Search isOpen={isSearchOpen} setSearch={setIsSearchOpen} />
     </Box>
   );
 }
