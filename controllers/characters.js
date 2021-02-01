@@ -99,3 +99,11 @@ module.exports.updateCharacter = (req, res, next) => {
     })
     .catch(() => next(new Error('Invalid Data')));
 };
+
+module.exports.getAllCharacters = (req, res, next) => {
+  Character.find({})
+    .then((characters) => {
+      res.status(200).send({ characters });
+    })
+    .catch(() => next(new Error('Not Found')));
+};

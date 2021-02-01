@@ -60,6 +60,20 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
+  getAllCharacters() {
+    return fetch(`${this._baseUrl}/characters`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
 }
 
 const api = new Api({
