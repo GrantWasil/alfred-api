@@ -15,6 +15,7 @@ function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterData, setCharacterData] = useState({});
   const [socketStatus, setSocketStatus] = useState(false);
+  const [gamemode, setGamemode] = useState(1);
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
@@ -32,6 +33,10 @@ function Main() {
     socket.on('status', (data) => {
       setSocketStatus(data);
     });
+    socket.on('gameMode', (data) => {
+      setGamemode(data);
+    })
+    socket.on('payment', )
   }, []);
 
   function handleCreateCharacter(data) {

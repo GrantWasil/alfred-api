@@ -29,12 +29,12 @@ io.on('connection', (socket) => {
     io.emit('gameMode', mode);
   });
 
-  socket.on('payment', (amount, sender, receiver) => {
-    io.emit('payment', amount, sender, receiver);
+  socket.on('payment', ({ amount, sender, receiver }) => {
+    io.emit('payment', { amount, sender, receiver });
   });
 
-  socket.on('ability', (ability, sender, receiver) => {
-    io.emit('ability', ability, sender, receiver);
+  socket.on('ability', ({ ability, sender, receiver }) => {
+    io.emit('ability', { ability, sender, receiver });
   });
 
   socket.on('disconnect', () => {
