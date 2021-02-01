@@ -80,7 +80,7 @@ function Main() {
   }
 
   function handleUpdateGamemode(data) {
-    socket.emit('gamemode', data);
+    socket.emit('gameMode', data);
   }
 
   return (
