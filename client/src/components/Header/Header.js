@@ -7,7 +7,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { characterData, onLogoutCharacter } = props;
+  const { characterData, onLogoutCharacter, gamemode } = props;
   const toggle = () => setIsOpen(!isOpen);
 
   return (
@@ -18,6 +18,7 @@ const Header = (props) => {
         isOpen={isOpen}
         characterData={characterData}
         onLogoutCharacter={onLogoutCharacter}
+        gamemode={gamemode}
       />
     </NavBarContainer>
   );
@@ -42,7 +43,7 @@ const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
 };
 
 const MenuLinks = (props) => {
-  const { isOpen, characterData, onLogoutCharacter } = props;
+  const { isOpen, characterData, onLogoutCharacter, gamemode } = props;
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -60,7 +61,10 @@ const MenuLinks = (props) => {
           <MenuItem to="/event">Event Info</MenuItem>
           <MenuItem to="/list">Guest List </MenuItem>
           {characterData.keyword === 'testing' ? (
-            <MenuItem to="/create">Create </MenuItem>
+            <>
+              <MenuItem to="/create">Create </MenuItem>
+              <Text display="block">Stage: {gamemode}</Text>
+            </>
           ) : (
             <> </>
           )}

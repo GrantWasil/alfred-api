@@ -16,6 +16,7 @@ function Main() {
   const [characterData, setCharacterData] = useState({});
   const [socketStatus, setSocketStatus] = useState(false);
   const [gamemode, setGamemode] = useState(1);
+  const socket = io();
 
   React.useEffect(() => {
     api.getCharacterData().then((res) => {
@@ -29,7 +30,6 @@ function Main() {
   }, []);
 
   React.useEffect(() => {
-    const socket = io();
     socket.on('status', (data) => {
       setSocketStatus(data);
     });
@@ -48,7 +48,7 @@ function Main() {
       }
       console.log('You have been abilitied!')
     })
-  }, [characterData]);
+  }, [characterData, socket]);
 
   function handleCreateCharacter(data) {
     api
@@ -84,6 +84,7 @@ function Main() {
         characterData={characterData}
         onLogoutCharacter={handleLogoutCharacter}
         socketStatus={socketStatus}
+        gamemode={gamemode}
       />
       <Container centerContent>
         <Router>
