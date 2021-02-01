@@ -36,8 +36,19 @@ function Main() {
     socket.on('gameMode', (data) => {
       setGamemode(data);
     })
-    socket.on('payment', )
-  }, []);
+    socket.on('payment', (data) => {
+      if (data.receiver !== characterData.name) {
+        return;
+      }
+      console.log('You got money!');
+    })
+    socket.on('ability', (data) => {
+      if (data.receiver !== characterData.name) {
+        return;
+      }
+      console.log('You have been abilitied!')
+    })
+  }, [characterData]);
 
   function handleCreateCharacter(data) {
     api
