@@ -24,6 +24,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 io.on('connection', (socket) => {
   socket.emit('status', true);
+
+  socket.on('gameMode', (mode) => {
+    io.emit('gameMode', mode);
+  });
+
+  socket.on('payment', (amount, sender, receiver) => {
+    io.emit('payment', amount, sender, receiver);
+  });
+
+  socket.on('ability', (ability, sender, receiver) => {
+    io.emit('ability', ability, sender, receiver);
+  });
+
   socket.on('disconnect', () => {
     console.log('Client disconnected');
   });

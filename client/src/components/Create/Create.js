@@ -33,6 +33,9 @@ function Create(props) {
   }
 
   function onSubmit() {
+    if (!keyword || !name || !traits || !preview) {
+      return;
+    }
     const data = {
       keyword,
       name,
