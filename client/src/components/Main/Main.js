@@ -7,6 +7,7 @@ import Character from '../Character/Character';
 import CharacterList from '../CharacterList/CharacterList';
 import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
+import Admin from '../Admin/Admin';
 import api from '../../utils/Api';
 import './Main.css';
 import { Box, Container } from '@chakra-ui/react';
@@ -78,6 +79,10 @@ function Main() {
     navigate('/login');
   }
 
+  function handleUpdateGamemode(data) {
+    io.emit('gamemode', data);
+  }
+
   return (
     <Box justifyContent="center">
       <Header
@@ -102,6 +107,10 @@ function Main() {
             component={Character}
             characterData={characterData}
             onLogoutCharacter={handleLogoutCharacter}
+          />
+          <Admin
+            path="/admin"
+            onUpdateGamemode={handleUpdateGamemode}
           />
         </Router>
       </Container>

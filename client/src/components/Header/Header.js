@@ -63,6 +63,7 @@ const MenuLinks = (props) => {
           {characterData.keyword === 'testing' ? (
             <>
               <MenuItem to="/create">Create </MenuItem>
+              <MenuItem to="/admin">Admin</MenuItem>
               <Text display="block">Stage: {gamemode}</Text>
             </>
           ) : (
