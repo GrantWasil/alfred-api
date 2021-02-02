@@ -20,6 +20,10 @@ function Search(props) {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
+          <DrawerHeader>
+            Search Bar
+          </DrawerHeader>
+          <Input></Input>
         </DrawerContent>
       </DrawerOverlay>
     </Drawer>

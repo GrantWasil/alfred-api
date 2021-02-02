@@ -8,6 +8,7 @@ import CharacterList from '../CharacterList/CharacterList';
 import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import Admin from '../Admin/Admin';
+import Actions from '../Actions/Actions';
 import Search from '../Search/Search';
 import api from '../../utils/Api';
 import './Main.css';
@@ -117,6 +118,7 @@ function Main() {
             onLogoutCharacter={handleLogoutCharacter}
           />
           <Admin path="/admin" onUpdateGamemode={handleUpdateGamemode} />
+          <Actions path="/actions" setSearch={setIsSearchOpen} />
         </Router>
       </Container>
       <Search
