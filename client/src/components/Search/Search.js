@@ -13,7 +13,7 @@ import {
 
 function Search(props) {
   const { isOpen, setSearch, allCharacterData } = props;
-  const { input, setInput } = useState('');
+  const [ input, setInput ]= useState('');
 
   function handleInputChange(e) {
     setInput(e.target.value);
@@ -35,8 +35,8 @@ function Search(props) {
               value={input}
               onChange={handleInputChange}
             />
-            <Stack spacing={2}>
-              {allCharacterData.map((character) => {
+            <Stack spacing={2} top={2} align="center">
+              {allCharacterData.filter((c) => c.name.includes(input)).map((character) => {
                 return (
                   <Text>{character.name}</Text>
                 )
