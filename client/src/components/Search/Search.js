@@ -21,6 +21,7 @@ function Search(props) {
 
   function handleClose() {
     setSearch(false);
+    setInput('');
   }
 
   function CharacterSelect({ children }) {

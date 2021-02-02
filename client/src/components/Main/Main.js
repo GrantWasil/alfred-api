@@ -100,7 +100,7 @@ function Main() {
         socketStatus={socketStatus}
         gamemode={gamemode}
       />
-      <Container centerContent>
+      <Container centerContent maxw="xl">
         <Router>
           <Login
             default
@@ -118,7 +118,7 @@ function Main() {
             onLogoutCharacter={handleLogoutCharacter}
           />
           <Admin path="/admin" onUpdateGamemode={handleUpdateGamemode} />
-          <Actions path="/actions" setSearch={setIsSearchOpen} />
+          <Actions path="/actions" setSearch={setIsSearchOpen} characterData={characterData} />
         </Router>
       </Container>
       <Search
