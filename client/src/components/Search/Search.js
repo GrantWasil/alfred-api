@@ -15,6 +15,10 @@ function Search(props) {
   const { isOpen, setSearch, allCharacterData } = props;
   const { searchInput, setSearchInput } = useState('');
 
+  function handleSearchInput(e) {
+    setSearchInput(e.target.value);
+  }
+
   function handleClose() {
     setSearch(false);
   }
@@ -26,7 +30,11 @@ function Search(props) {
           <DrawerCloseButton />
           <DrawerHeader>Search Bar</DrawerHeader>
           <DrawerBody>
-            <Input placeholder="Enter Character's Name" />
+            <Input
+              placeholder="Enter Character's Name"
+              value={searchInput}
+              onChange={handleSearchInput}
+            />
             <Stack spacing={2}>
               {allCharacterData
                 .filter((character) => character.name.includes(searchInput))
