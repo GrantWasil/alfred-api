@@ -10,6 +10,7 @@ function Actions(props) {
 
   return (
     <Grid
+      h="80vh"
       templateRows="repeat(5, 1fr)"
       templateColumns="repeate(3, 1fr)"
       gap={3}
