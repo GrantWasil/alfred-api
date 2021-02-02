@@ -30,10 +30,9 @@ function Main() {
         setCharacterData(res.character);
         setIsLoggedIn(true);
         navigate('/me');
-      } else {
-        navigate('/login');
       }
-    });
+    })
+    .catch(() => navigate('/login'));
     api.getAllCharacters().then((res) => {
       setAllCharacterData(res.characters);
     });

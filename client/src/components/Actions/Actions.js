@@ -17,9 +17,9 @@ function Actions(props) {
       gap={3}
     >
       <GridItem rowSpan={1} colSpan={3}>
-        <Stack justify="center">
+        <Stack textAlign="center">
           <Heading>{characterData.name}</Heading>
-          <Stack direction={'column'} spacing={2}>
+          <Stack direction={'row'} spacing={2}>
             <Text>Secret: {characterData.secret}</Text>
             <Text>Clue: {characterData.clue}</Text>
           </Stack>
