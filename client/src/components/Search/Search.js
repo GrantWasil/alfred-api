@@ -8,9 +8,7 @@ import {
   DrawerHeader,
   DrawerBody,
   Stack,
-  Flex,
-  Spacer,
-  Text,
+  Button,
 } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 
@@ -28,11 +26,12 @@ function Search(props) {
 
   function CharacterSelect({ children }) {
     return (
-      <Flex>
-        <Text>{children}</Text>
-        <Spacer />
-        <ArrowForwardIcon />
-      </Flex>
+      <Button
+        variant="ghost"
+        rightIcon={<ArrowForwardIcon />}
+      >
+        {children}
+      </Button>
     );
   }
 
