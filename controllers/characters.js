@@ -6,7 +6,11 @@ module.exports.loginCharacter = (req, res, next) => {
   const { keyword } = req.body;
   return Character.findOne({ keyword })
     .then((character) => {
-      const token = jwt.sign({ _id: character._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
+      const token = jwt.sign(
+        { _id: character._id },
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+        { expiresIn: '14d' },
+      );
       res.status(200).send({ token });
     })
     .catch(() => next(new Error('Character not found')));
@@ -102,6 +106,10 @@ module.exports.updateCharacter = (req, res, next) => {
 
 module.exports.getAllCharacters = (req, res, next) => {
   Character.find({})
+    .select(
+      '-keyword traits preview bio goals others items tips abilities secret clue money active',
+    )
+    .sort('name')
     .then((characters) => {
       res.status(200).send({ characters });
     })
