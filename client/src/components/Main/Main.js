@@ -34,7 +34,7 @@ function Main() {
       }
     });
     api.getAllCharacters().then((res) => {
-      setAllCharacterData(res.characters)
+      setAllCharacterData(res.characters);
     });
   }, []);
 
@@ -44,19 +44,19 @@ function Main() {
     });
     socket.on('gameMode', (data) => {
       setGamemode(data);
-    })
+    });
     socket.on('payment', (data) => {
       if (data.receiver !== characterData.name) {
         return;
       }
       console.log('You got money!');
-    })
+    });
     socket.on('ability', (data) => {
       if (data.receiver !== characterData.name) {
         return;
       }
-      console.log('You have been abilitied!')
-    })
+      console.log('You have been abilitied!');
+    });
   }, [characterData, socket]);
 
   function handleCreateCharacter(data) {
@@ -116,13 +116,14 @@ function Main() {
             characterData={characterData}
             onLogoutCharacter={handleLogoutCharacter}
           />
-          <Admin
-            path="/admin"
-            onUpdateGamemode={handleUpdateGamemode}
-          />
+          <Admin path="/admin" onUpdateGamemode={handleUpdateGamemode} />
         </Router>
       </Container>
-      <Search isOpen={isSearchOpen} setSearch={setIsSearchOpen} />
+      <Search
+        isOpen={isSearchOpen}
+        setSearch={setIsSearchOpen}
+        allCharacterData={allCharacterData}
+      />
     </Box>
   );
 }

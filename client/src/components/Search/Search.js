@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 
 function Search(props) {
-  const { isOpen, setSearch } = props;
+  const { isOpen, setSearch, allCharacterData } = props;
 
   function handleClose() {
     setSearch(false);
