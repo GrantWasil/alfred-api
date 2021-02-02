@@ -10,17 +10,17 @@ function Actions(props) {
 
   return (
     <Grid
-      h="100%"
-      w="100%"
+      h="100vh"
+      w="100vw"
       templateRows="repeat(5, 1fr)"
-      templateColumns="repeate(3, 1fr)"
+      templateColumns="repeat(3, 1fr)"
       gap={3}
     >
       <GridItem rowSpan={1} colSpan={3} bg="tomato" />
-      <GridItem rowSpan={1} colSpan={1} bg="papayawhip" />
+      <GridItem rowSpan={1} colSpan={1} bg="white" />
       <GridItem rowSpan={3} colSpan={2} bg="tomato" />
-      <GridItem rowSpan={1} colSpan={1} bg="papayawhip" />
-      <GridItem rowSpan={1} colSpan={1} bg="papayawhip" />
+      <GridItem rowSpan={1} colSpan={1} bg="white" />
+      <GridItem rowSpan={1} colSpan={1} bg="white" />
       <GridItem rowSpan={1} colSpan={3} bg="tomato" />
     </Grid>
   );
