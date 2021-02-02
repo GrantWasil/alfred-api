@@ -10,7 +10,7 @@ function Actions(props) {
 
   return (
     <Stack>
-      <Button>Open Drawer</Button>
+      <Button onClick={handleOpenSearch}>Open Drawer</Button>
     </Stack>
   );
 }
