@@ -16,17 +16,21 @@ function Actions(props) {
       templateColumns="repeat(3, 1fr)"
       gap={3}
     >
-      <GridItem rowSpan={1} colSpan={3} >
+      <GridItem rowSpan={1} colSpan={3}>
         <Stack justify="center">
           <Heading>{characterData.name}</Heading>
-          <Stack direction={"column"} spacing={2}>
+          <Stack direction={'column'} spacing={2}>
             <Text>Secret: {characterData.secret}</Text>
             <Text>Clue: {characterData.clue}</Text>
           </Stack>
         </Stack>
       </GridItem>
       <GridItem rowSpan={1} colSpan={1} bg="white" />
-      <GridItem rowSpan={3} colSpan={2} bg="tomato" />
+      <GridItem rowSpan={3} colSpan={2} bg="tomato" overflowY="scroll">
+        <Stack justify="start" spacing={2}>
+          {characterData.bio.map((p) => <Text>{p}</Text>)}
+        </Stack>
+      </GridItem>
       <GridItem rowSpan={1} colSpan={1} bg="white" />
       <GridItem rowSpan={1} colSpan={1} bg="white" />
       <GridItem rowSpan={1} colSpan={3} bg="tomato" />
