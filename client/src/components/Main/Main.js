@@ -29,6 +29,8 @@ function Main() {
         setCharacterData(res.character);
         setIsLoggedIn(true);
         navigate('/me');
+      } else {
+        navigate('/login');
       }
     });
     api.getAllCharacters().then((res) => {
