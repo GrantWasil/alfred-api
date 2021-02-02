@@ -57,9 +57,18 @@ const MenuLinks = (props) => {
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/me">Your Character</MenuItem>
-          <MenuItem to="/event">Event Info</MenuItem>
-          <MenuItem to="/list">Guest List </MenuItem>
+          {gamemode === 1 ? (
+              <>
+                <MenuItem to="/me">Your Character</MenuItem>
+                <MenuItem to="/event">Event Info</MenuItem>
+                <MenuItem to="/list">Guest List </MenuItem>
+              </>
+            ) : (
+              <>
+                <MenuItem to="/me">Event Info</MenuItem>
+                <MenuItem to="/actions">Actions</MenuItem>
+              </>
+            )}
           {characterData.keyword === 'testing' ? (
             <>
               <MenuItem to="/create">Create </MenuItem>
