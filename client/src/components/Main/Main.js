@@ -16,6 +16,7 @@ import { Box, Container } from '@chakra-ui/react';
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterData, setCharacterData] = useState({});
+  const [allCharacterData, setAllCharacterData] = useState([]);
   const [socketStatus, setSocketStatus] = useState(false);
   const [gamemode, setGamemode] = useState(1);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -31,7 +32,7 @@ function Main() {
       }
     });
     api.getAllCharacters().then((res) => {
-      console.log(res);
+      setAllCharacterData(res.characters)
     });
   }, []);
 
