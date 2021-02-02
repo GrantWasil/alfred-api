@@ -8,12 +8,15 @@ import {
   DrawerHeader,
   DrawerBody,
   Stack,
+  Flex,
+  Spacer,
   Text,
 } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 function Search(props) {
   const { isOpen, setSearch, allCharacterData } = props;
-  const [ input, setInput ]= useState('');
+  const [input, setInput] = useState('');
 
   function handleInputChange(e) {
     setInput(e.target.value);
@@ -21,6 +24,16 @@ function Search(props) {
 
   function handleClose() {
     setSearch(false);
+  }
+
+  function CharacterSelect({ children }) {
+    return (
+      <Flex>
+        <Text>{children}</Text>
+        <Spacer />
+        <ArrowForwardIcon />
+      </Flex>
+    );
   }
 
   return (
@@ -36,11 +49,11 @@ function Search(props) {
               onChange={handleInputChange}
             />
             <Stack spacing={2} top={2} align="center">
-              {allCharacterData.filter((c) => c.name.includes(input)).map((character) => {
-                return (
-                  <Text>{character.name}</Text>
-                )
-              })}
+              {allCharacterData
+                .filter((c) => c.name.includes(input))
+                .map((character) => {
+                  return <CharacterSelect>{character.name}</CharacterSelect>;
+                })}
             </Stack>
           </DrawerBody>
         </DrawerContent>
