@@ -125,6 +125,7 @@ function Main() {
         isOpen={isSearchOpen}
         setSearch={setIsSearchOpen}
         allCharacterData={allCharacterData}
+        characterData={characterData}
       />
     </Box>
   );

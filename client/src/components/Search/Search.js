@@ -10,10 +10,9 @@ import {
   Stack,
   Button,
 } from '@chakra-ui/react';
-import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 function Search(props) {
-  const { isOpen, setSearch, allCharacterData } = props;
+  const { isOpen, setSearch, allCharacterData, characterData } = props;
   const [input, setInput] = useState('');
 
   function handleInputChange(e) {
@@ -26,10 +25,7 @@ function Search(props) {
 
   function CharacterSelect({ children }) {
     return (
-      <Button
-        variant="ghost"
-        rightIcon={<ArrowForwardIcon />}
-      >
+      <Button variant="ghost">
         {children}
       </Button>
     );
@@ -47,9 +43,11 @@ function Search(props) {
               value={input}
               onChange={handleInputChange}
             />
-            <Stack spacing={2} top={2} align="center">
+            <Stack spacing={2} pt={2} align="center">
               {allCharacterData
-                .filter((c) => c.name.includes(input))
+                .filter(
+                  (c) => c.name.includes(input) && c.name !== characterData.name
+                )
                 .map((character) => {
                   return <CharacterSelect>{character.name}</CharacterSelect>;
                 })}
