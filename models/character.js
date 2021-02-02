@@ -17,10 +17,7 @@ const characterSchema = new mongoose.Schema({
     type: String,
     default: ' ',
   },
-  bio: {
-    type: String,
-    default: ' ',
-  },
+  bio: [String],
   goals: [
     {
       name: String,
