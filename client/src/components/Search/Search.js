@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Input,
   Drawer,
@@ -6,10 +6,14 @@ import {
   DrawerContent,
   DrawerCloseButton,
   DrawerHeader,
+  DrawerBody,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 
 function Search(props) {
   const { isOpen, setSearch, allCharacterData } = props;
+  const { searchInput, setSearchInput } = useState('');
 
   function handleClose() {
     setSearch(false);
@@ -20,10 +24,17 @@ function Search(props) {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>
-            Search Bar
-          </DrawerHeader>
-          <Input></Input>
+          <DrawerHeader>Search Bar</DrawerHeader>
+          <DrawerBody>
+            <Input placeholder="Enter Character's Name" />
+            <Stack spacing={2}>
+              {allCharacterData
+                .filter((character) => character.name.includes(searchInput))
+                .map((includedCharacter) => {
+                  return <Text>{includedCharacter.name}</Text>;
+                })}
+            </Stack>
+          </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
     </Drawer>
