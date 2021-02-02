@@ -29,6 +29,7 @@ function Actions(props) {
         <Heading size="l">Money</Heading>
         <Stack spacing={2}>
           <Text>${characterData.money}</Text>
+          <Button color="teal" onClick={handleOpenSearch}>Pay</Button>
         </Stack>
       </GridItem>
       <GridItem rowSpan={3} colSpan={2} overflowY="scroll">
