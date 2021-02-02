@@ -13,10 +13,10 @@ import {
 
 function Search(props) {
   const { isOpen, setSearch, allCharacterData } = props;
-  const { searchInput, setSearchInput } = useState('');
+  const { input, setInput } = useState('');
 
   function handleSearchInput(e) {
-    setSearchInput(e.target.value);
+    setInput(e.target.value);
   }
 
   function handleClose() {
@@ -32,12 +32,12 @@ function Search(props) {
           <DrawerBody>
             <Input
               placeholder="Enter Character's Name"
-              value={searchInput}
+              value={input}
               onChange={handleSearchInput}
             />
             <Stack spacing={2}>
               {allCharacterData
-                .filter((character) => character.name.includes(searchInput))
+                .filter((character) => character.name.includes(input))
                 .map((includedCharacter) => {
                   return <Text>{includedCharacter.name}</Text>;
                 })}
