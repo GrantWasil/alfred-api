@@ -107,7 +107,7 @@ module.exports.updateCharacter = (req, res, next) => {
 module.exports.getAllCharacters = (req, res, next) => {
   Character.find({})
     .select(
-      '-keyword -traits -preview -bio -goals -others -items -tips -abilities -secret -clue -money - active',
+      '-keyword -traits -preview -bio -goals -others -items -tips -abilities -secret -clue -money -active',
     )
     .sort('name')
     .then((characters) => {
