@@ -19,16 +19,23 @@ function Actions(props) {
       <GridItem rowSpan={1} colSpan={3}>
         <Stack textAlign="center">
           <Heading>{characterData.name}</Heading>
-          <Stack direction={'row'} spacing={2}>
+          <Stack direction={'row'} spacing={2} justify="space-between">
             <Text>Secret: {characterData.secret}</Text>
             <Text>Clue: {characterData.clue}</Text>
           </Stack>
         </Stack>
       </GridItem>
-      <GridItem rowSpan={1} colSpan={1} bg="white" />
+      <GridItem rowSpan={1} colSpan={1}>
+        <Heading size="l">Money</Heading>
+        <Stack spacing={2}>
+          <Text>${characterData.money}</Text>
+        </Stack>
+      </GridItem>
       <GridItem rowSpan={3} colSpan={2} overflowY="scroll">
         <Stack justify="start" spacing={2}>
-          {characterData.bio.map((p) => <Text>{p}</Text>)}
+          {characterData.bio.map((p) => (
+            <Text>{p}</Text>
+          ))}
         </Stack>
       </GridItem>
       <GridItem rowSpan={1} colSpan={1} bg="white" />
