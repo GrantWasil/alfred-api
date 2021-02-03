@@ -3,20 +3,15 @@ import {
   Box,
   Stack,
   Button,
-  Grid,
-  GridItem,
   Heading,
   Text,
-  Wrap,
+  useDisclosure,
 } from '@chakra-ui/react';
+import Search from '../Search/Search';
 
 function Actions(props) {
-  const { setSearch, characterData } = props;
-
-  function handleOpenSearch(e) {
-    console.log(e.target.value);
-    setSearch(true);
-  }
+  const { characterData, allCharacterData } = props;
+  const { isOpen, onOpen } = useDisclosure();
 
   return (
     <Stack spacing={3}>
@@ -26,8 +21,16 @@ function Actions(props) {
           <Box>
             <Heading size="l">Money</Heading>
             <Text>${characterData.money}</Text>
-            <Button value="pay" onClick={handleOpenSearch}>Pay</Button>
+            <Button value="pay" onClick={onOpen}>
+              Pay
+            </Button>
           </Box>
+          <Search
+            isOpen={isOpen}
+            setSearch={onOpen}
+            allCharacterData={allCharacterData}
+            characterData={characterData}
+          />
         </>
       ) : (
         <></>

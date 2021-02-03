@@ -25,15 +25,17 @@ function Main() {
   const socket = io();
 
   React.useEffect(() => {
-    api.getCharacterData().then((res) => {
-      console.log(res);
-      if (res.character) {
-        setCharacterData(res.character);
-        setIsLoggedIn(true);
-        navigate('/me');
-      }
-    })
-    .catch(() => navigate('/login'));
+    api
+      .getCharacterData()
+      .then((res) => {
+        console.log(res);
+        if (res.character) {
+          setCharacterData(res.character);
+          setIsLoggedIn(true);
+          navigate('/me');
+        }
+      })
+      .catch(() => navigate('/login'));
     api.getAllCharacters().then((res) => {
       setAllCharacterData(res.characters);
     });
@@ -118,16 +120,15 @@ function Main() {
             onLogoutCharacter={handleLogoutCharacter}
           />
           <Admin path="/admin" onUpdateGamemode={handleUpdateGamemode} />
-          <Actions path="/actions" setSearch={setIsSearchOpen} characterData={characterData} />
+          <Actions
+            path="/actions"
+            setSearch={setIsSearchOpen}
+            characterData={characterData}
+            allCharacterData={allCharacterData}
+          />
           <Bio path="/bio" characterData={characterData} />
         </Router>
       </Container>
-      <Search
-        isOpen={isSearchOpen}
-        setSearch={setIsSearchOpen}
-        allCharacterData={allCharacterData}
-        characterData={characterData}
-      />
     </Box>
   );
 }
