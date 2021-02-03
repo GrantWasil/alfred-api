@@ -6,19 +6,18 @@ import {
   Text,
   Link,
   Divider,
+  Box,
 } from '@chakra-ui/react';
 
 function Footer() {
   return (
-    <>
+    <Box position="absolute" bottom="0">
       <Divider />
       <Flex
         as="footer"
         justifyContent="space-between"
         w="100%"
         p={8}
-        position="absolute"
-        bottom="0"
         align="center"
       >
         <Text>Made with Love, and also Code</Text>
@@ -27,7 +26,7 @@ function Footer() {
           Grant Wasil's Github
         </Link>
       </Flex>
-    </>
+    </Box>
   );
 }
 
