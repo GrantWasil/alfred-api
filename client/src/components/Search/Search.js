@@ -43,7 +43,7 @@ function Search(props) {
                 )
                 .map((character) => {
                   return (
-                    <Button variant="ghost" value={character.name}>
+                    <Button variant="ghost" value={character._id}>
                       {character.name}
                     </Button>
                   );
