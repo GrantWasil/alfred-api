@@ -20,12 +20,18 @@ function Actions(props) {
 
   return (
     <Stack spacing={3}>
-      <Heading>Actions</Heading>
-      <Box>
-        <Heading size="l">Money</Heading>
-        <Text>${characterData.money}</Text>
-        <Button onClick={handleOpenSearch}>Pay</Button>
-      </Box>
+      {characterData.name ? (
+        <>
+          <Heading>Actions</Heading>
+          <Box>
+            <Heading size="l">Money</Heading>
+            <Text>${characterData.money}</Text>
+            <Button onClick={handleOpenSearch}>Pay</Button>
+          </Box>
+        </>
+      ) : (
+        <></>
+      )}
     </Stack>
   );
 }
