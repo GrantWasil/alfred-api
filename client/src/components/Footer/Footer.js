@@ -12,7 +12,7 @@ import {
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 
 function Footer() {
-  const bg = useColorModeValue("rgb(26, 32, 44)", "rgb(255, 255, 266");
+  const bg = useColorModeValue("rgb(255, 255, 266)", "rgb(26, 32, 44)");
   return (
     <Box position="fixed" bottom="0" w="100%" zIndex="2" as="footer" bg={bg}>
       <Divider />
