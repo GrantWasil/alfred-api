@@ -31,7 +31,12 @@ function Actions(props) {
             <Heading size="l">Money</Heading>
             <Stack spacing={2}>
               <Text>${characterData.money}</Text>
-              <Button colorScheme="teal" size="sm" onClick={handleOpenSearch}>
+              <Button
+                colorScheme="teal"
+                size="sm"
+                maxw="20%"
+                onClick={handleOpenSearch}
+              >
                 Pay
               </Button>
             </Stack>
@@ -43,7 +48,13 @@ function Actions(props) {
               ))}
             </Stack>
           </GridItem>
-          <GridItem rowSpan={1} colSpan={1} bg="white" />
+          <GridItem rowSpan={1} colSpan={1} bg="white">
+            <Stack justify="start" spacing={2}>
+              {characterData.items.map((i) =>(
+                <Text>{i}</Text>
+              ))}
+            </Stack>
+          </GridItem>
           <GridItem rowSpan={1} colSpan={1} bg="white" />
           <GridItem rowSpan={1} colSpan={3} bg="tomato" />
         </Grid>
