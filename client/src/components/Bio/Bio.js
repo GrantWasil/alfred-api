@@ -36,12 +36,10 @@ function Bio(props) {
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Stack spacing={3}>
+              <AccordionPanel>
                   {characterData.tips.map((t) => {
-                    return <Text>{t}</Text>;
+                    return <Text pb={3}>{t}</Text>;
                   })}
-                </Stack>
               </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -51,12 +49,10 @@ function Bio(props) {
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Stack spacing={3}>
+              <AccordionPanel>
                   {characterData.bio.map((p) => {
-                    return <Text>{p}</Text>;
+                    return <Text pb={3}>{p}</Text>;
                   })}
-                </Stack>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
