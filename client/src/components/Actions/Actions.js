@@ -21,7 +21,7 @@ function Actions(props) {
           <Box>
             <Heading size="l">Money</Heading>
             <Text>${characterData.money}</Text>
-            <Button value="pay" onClick={onOpen}>
+            <Button value="pay" rounded="md" onClick={onOpen}>
               Pay
             </Button>
           </Box>
