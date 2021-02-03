@@ -11,7 +11,7 @@ import {
 
 function Footer() {
   return (
-    <Box position="sticky" bottom="0" w="100%" zIndex="2" as="footer">
+    <Box position="fixed" bottom="0" w="100%" zIndex="2" as="footer">
       <Divider />
       <Flex justifyContent="space-between" w="100%" p={8} align="center" direction={{'column' : 'row'}}>
         <Text>Made with Love, and also Code</Text>
