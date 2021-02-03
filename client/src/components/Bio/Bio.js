@@ -41,7 +41,7 @@ function Bio(props) {
                   return (
                     <Flex>
                       <Text pb={3}>
-                        <Text fontStyle="italic">{g.name}</Text>
+                        <Text fontWeight={700}>{g.name}</Text>
                         {g.text}
                       </Text>
                     </Flex>
