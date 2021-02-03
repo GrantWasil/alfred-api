@@ -88,7 +88,7 @@ const MenuLinks = (props) => {
             </>
           ) : (
             <>
-              <MenuItem to="/me" closeMenu={closeMenu}>
+              <MenuItem to="/event" closeMenu={closeMenu}>
                 Event Info
               </MenuItem>
               <MenuItem to="/actions" closeMenu={closeMenu}>
