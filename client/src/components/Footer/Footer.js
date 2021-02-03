@@ -11,15 +11,9 @@ import {
 
 function Footer() {
   return (
-    <Box position="sticky" bottom="0" w="100%" zIndex="2">
+    <Box position="sticky" bottom="0" w="100%" zIndex="2" as="footer">
       <Divider />
-      <Flex
-        as="footer"
-        justifyContent="space-between"
-        w="100%"
-        p={8}
-        align="center"
-      >
+      <Flex justifyContent="space-between" w="100%" p={8} align="center">
         <Text>Made with Love, and also Code</Text>
         <ColorToggle />
         <Link href="https://www.github.com/GrantWasil" isExternal>
