@@ -13,7 +13,8 @@ import {
 function Actions(props) {
   const { setSearch, characterData } = props;
 
-  function handleOpenSearch() {
+  function handleOpenSearch(e) {
+    console.log(e);
     setSearch(true);
   }
 
@@ -23,6 +24,7 @@ function Actions(props) {
       <Box>
         <Heading size="l">Money</Heading>
         <Text>${characterData.money}</Text>
+        <Button onClick={handleOpenSearch}>Pay</Button>
       </Box>
     </Stack>
   );
