@@ -11,7 +11,7 @@ import Search from '../Search/Search';
 
 function Actions(props) {
   const { characterData, allCharacterData } = props;
-  const { isOpen, onOpen } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Stack spacing={3}>
@@ -27,7 +27,7 @@ function Actions(props) {
           </Box>
           <Search
             isOpen={isOpen}
-            setSearch={onOpen}
+            onClose={onClose}
             allCharacterData={allCharacterData}
             characterData={characterData}
           />

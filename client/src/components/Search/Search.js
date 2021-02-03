@@ -12,20 +12,15 @@ import {
 } from '@chakra-ui/react';
 
 function Search(props) {
-  const { isOpen, setSearch, allCharacterData, characterData } = props;
+  const { isOpen, onClose, allCharacterData, characterData } = props;
   const [input, setInput] = useState('');
 
   function handleInputChange(e) {
     setInput(e.target.value);
   }
 
-  function handleClose() {
-    setSearch(false);
-    setInput('');
-  }
-
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={handleClose}>
+    <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
