@@ -1,5 +1,13 @@
 import React from 'react';
-import { Link, Box, Flex, Text, Button, Stack } from '@chakra-ui/react';
+import {
+  Link,
+  Box,
+  Flex,
+  Text,
+  Button,
+  Stack,
+  useColorMode,
+} from '@chakra-ui/react';
 import { Link as ReachLink } from '@reach/router';
 
 import Logo from '../Logo/Logo';
@@ -22,7 +30,17 @@ const Header = (props) => {
         gamemode={gamemode}
         closeMenu={closeMenu}
       />
+      <ColorToggle />
     </NavBarContainer>
+  );
+};
+
+const ColorToggle = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Button size="sm" rounded="md" onClick={toggleColorMode}>
+      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+    </Button>
   );
 };
 
