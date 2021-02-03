@@ -71,7 +71,7 @@ function Actions(props) {
           <GridItem rowSpan={1} colSpan={3}>
             <Wrap>
               {characterData.goals.map((g) => {
-                <Button>{g.name}</Button>
+                return <Button>{g.name}</Button>
               })}
             </Wrap>
           </GridItem>
