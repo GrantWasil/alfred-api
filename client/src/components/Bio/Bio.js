@@ -37,9 +37,9 @@ function Bio(props) {
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel>
-                  {characterData.tips.map((t) => {
-                    return <Text pb={3}>{t}</Text>;
-                  })}
+                {characterData.tips.map((t) => {
+                  return <Text pb={3}>{t}</Text>;
+                })}
               </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -50,14 +50,16 @@ function Bio(props) {
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel>
-                  {characterData.others.map((o) => {
-                    return (
-                      <Flex>
+                {characterData.others.map((o) => {
+                  return (
+                    <Flex>
+                      <Text>
                         <Text fontStyle="italic">{o.name}</Text>
-                        <Text>{o.text}</Text>
-                      </Flex>
-                    )
-                  })}
+                        {o.text}
+                      </Text>
+                    </Flex>
+                  );
+                })}
               </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -68,9 +70,9 @@ function Bio(props) {
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel>
-                  {characterData.bio.map((p) => {
-                    return <Text pb={3}>{p}</Text>;
-                  })}
+                {characterData.bio.map((p) => {
+                  return <Text pb={3}>{p}</Text>;
+                })}
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
