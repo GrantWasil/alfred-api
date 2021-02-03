@@ -1,15 +1,32 @@
 import React from 'react';
-import { useColorMode, Button, Flex, Text, Link } from '@chakra-ui/react';
+import {
+  useColorMode,
+  Button,
+  Flex,
+  Text,
+  Link,
+  Divider,
+} from '@chakra-ui/react';
 
 function Footer() {
   return (
-    <Flex as="footer" justifyContent="space-between" w="100%" p={8}>
-      <Text>Made with Love, and also Code</Text>
-      <ColorToggle />
-      <Link href="https://www.github.com/GrantWasil" isExternal>
-        Grant Wasil
-      </Link>
-    </Flex>
+    <>
+      <Divider />
+      <Flex
+        as="footer"
+        justifyContent="space-between"
+        w="100%"
+        p={8}
+        position="absolute"
+        bottom="0"
+      >
+        <Text>Made with Love, and also Code</Text>
+        <ColorToggle />
+        <Link href="https://www.github.com/GrantWasil" isExternal>
+          Grant Wasil's Github
+        </Link>
+      </Flex>
+    </>
   );
 }
 
