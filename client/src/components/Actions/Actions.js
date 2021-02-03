@@ -14,7 +14,7 @@ function Actions(props) {
   const { setSearch, characterData } = props;
 
   function handleOpenSearch(e) {
-    console.log(e);
+    console.log(e.target.value);
     setSearch(true);
   }
 
