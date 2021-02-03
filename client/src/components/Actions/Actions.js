@@ -31,7 +31,7 @@ function Actions(props) {
             <Heading size="l">Money</Heading>
             <Stack spacing={2}>
               <Text>${characterData.money}</Text>
-              <Button color="teal" onClick={handleOpenSearch}>
+              <Button colorScheme="teal" size="sm" onClick={handleOpenSearch}>
                 Pay
               </Button>
             </Stack>
