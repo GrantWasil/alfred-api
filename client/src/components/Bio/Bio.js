@@ -45,6 +45,24 @@ function Bio(props) {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
+                  Your relationships
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel>
+                  {characterData.others.map((o) => {
+                    return (
+                      <Flex>
+                        <Text fontStyle="italic">{o.name}</Text>
+                        <Text>{o.text}</Text>
+                      </Flex>
+                    )
+                  })}
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
                   Your bio
                 </Box>
                 <AccordionIcon />
