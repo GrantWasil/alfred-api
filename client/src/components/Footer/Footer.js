@@ -19,6 +19,7 @@ function Footer() {
         p={8}
         position="absolute"
         bottom="0"
+        align="center'"
       >
         <Text>Made with Love, and also Code</Text>
         <ColorToggle />
