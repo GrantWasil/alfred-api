@@ -1,5 +1,14 @@
 import React from 'react';
-import { Box, Stack, Button, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Stack,
+  Button,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+  Wrap,
+} from '@chakra-ui/react';
 
 function Actions(props) {
   const { setSearch, characterData } = props;
@@ -45,21 +54,27 @@ function Actions(props) {
             <Heading size="l">Your Items</Heading>
             <Stack justify="start" spacing={2}>
               {characterData.bio.map((p) => (
-                <Box border="1px solid grey" shadow="1px solid lightgrey">
-                  <Text>{p}</Text>
-                </Box>
+                <Text>{p}</Text>
               ))}
             </Stack>
           </GridItem>
           <GridItem rowSpan={1} colSpan={1} bg="white">
             <Stack justify="start" spacing={2}>
               {characterData.items.map((i) => (
-                <Text>{i}</Text>
+                <Box border="1px solid">
+                  <Text>{i}</Text>
+                </Box>
               ))}
             </Stack>
           </GridItem>
           <GridItem rowSpan={1} colSpan={1} bg="white" />
-          <GridItem rowSpan={1} colSpan={3} bg="tomato" />
+          <GridItem rowSpan={1} colSpan={3}>
+            <Wrap>
+              {characterData.goals.map((g) => {
+                <Button>{g.name}</Button>
+              })}
+            </Wrap>
+          </GridItem>
         </Grid>
       ) : (
         <> </>
