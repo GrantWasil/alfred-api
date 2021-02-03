@@ -11,7 +11,7 @@ import {
 
 function Footer() {
   return (
-    <Box position="absolute" bottom="0">
+    <Box position="sticky" bottom="0" w="100%" zIndex="2">
       <Divider />
       <Flex
         as="footer"
