@@ -33,9 +33,11 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <Flex w="m" h="m">
+              <Flex>
+                <Flex direction="column">
                 <Heading size="m">{a.name}</Heading>
                 <Text>{a.text}</Text>
+                </Flex>
                 <Text>Uses: {a.uses}</Text>
               </Flex>
             );
