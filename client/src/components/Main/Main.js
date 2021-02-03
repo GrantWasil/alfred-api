@@ -102,7 +102,7 @@ function Main() {
         socketStatus={socketStatus}
         gamemode={gamemode}
       />
-      <Container centerContent maxw="xl">
+      <Container centerContent maxw="xl" pb={["144px", "96px"]} height="100%">
         <Router>
           <Login
             default
