@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Button, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { Box, Stack, Button, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
 function Actions(props) {
   const { setSearch, characterData } = props;
@@ -42,15 +42,18 @@ function Actions(props) {
             </Stack>
           </GridItem>
           <GridItem rowSpan={3} colSpan={2} overflowY="scroll">
+            <Heading size="l">Your Items</Heading>
             <Stack justify="start" spacing={2}>
               {characterData.bio.map((p) => (
-                <Text>{p}</Text>
+                <Box border="1px solid grey" shadow="1px solid lightgrey">
+                  <Text>{p}</Text>
+                </Box>
               ))}
             </Stack>
           </GridItem>
           <GridItem rowSpan={1} colSpan={1} bg="white">
             <Stack justify="start" spacing={2}>
-              {characterData.items.map((i) =>(
+              {characterData.items.map((i) => (
                 <Text>{i}</Text>
               ))}
             </Stack>
