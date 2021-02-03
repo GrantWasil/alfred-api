@@ -14,7 +14,7 @@ function Actions(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Stack spacing={3} justify="center">
+    <Stack spacing={3} justify="center" textAlign="center">
       {characterData.name ? (
         <>
           <Heading>Actions</Heading>
