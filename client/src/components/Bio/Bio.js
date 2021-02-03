@@ -11,17 +11,17 @@ function Bio(props) {
           <Heading>{characterData.name}</Heading>
           <Flex>
             <Heading size="l">Your secret: </Heading>
-            <Text>{characterData.secret}</Text>
+            <Text pl={1}>{characterData.secret}</Text>
           </Flex>
           <Flex>
             <Heading size="l">Your clue: </Heading>
-            <Text>{characterData.clue}</Text>
+            <Text pl={1}>{characterData.clue}</Text>
           </Flex>
           <Heading size="l">Starting tips:</Heading>
           {characterData.tips.map((t) => {
             return <Text>{t}</Text>;
           })}
-          <Heading size="l">YourbBio:</Heading>
+          <Heading size="l">Your Bio:</Heading>
           {characterData.bio.map((p) => {
             return <Text>{p}</Text>;
           })}
