@@ -9,6 +9,7 @@ const Header = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { characterData, onLogoutCharacter, gamemode } = props;
   const toggle = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <NavBarContainer {...props}>
@@ -19,6 +20,7 @@ const Header = (props) => {
         characterData={characterData}
         onLogoutCharacter={onLogoutCharacter}
         gamemode={gamemode}
+        closeMenu={closeMenu}
       />
     </NavBarContainer>
   );
@@ -32,9 +34,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
+const MenuItem = ({ children, isLast, to = '/', closeMenu, ...rest }) => {
   return (
-    <Link as={ReachLink} to={to}>
+    <Link as={ReachLink} to={to} onClick={closeMenu}>
       <Text display="block" {...rest}>
         {children}
       </Text>
@@ -43,7 +45,13 @@ const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
 };
 
 const MenuLinks = (props) => {
-  const { isOpen, characterData, onLogoutCharacter, gamemode } = props;
+  const {
+    isOpen,
+    characterData,
+    onLogoutCharacter,
+    gamemode,
+    closeMenu,
+  } = props;
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -58,24 +66,44 @@ const MenuLinks = (props) => {
           pt={[4, 4, 0, 0]}
         >
           {gamemode === 1 ? (
-              <>
-                <MenuItem to="/me">Your Character</MenuItem>
-                <MenuItem to="/event">Event Info</MenuItem>
-                <MenuItem to="/list">Guest List </MenuItem>
-              </>
-            ) : (
-              <>
-                <MenuItem to="/me">Event Info</MenuItem>
-                <MenuItem to="/actions">Actions</MenuItem>
-              </>
-            )}
+            <>
+              <MenuItem to="/me" closeMenu={closeMenu}>
+                Your Character
+              </MenuItem>
+              <MenuItem to="/event" closeMenu={closeMenu}>
+                Event Info
+              </MenuItem>
+              <MenuItem to="/list" closeMenu={closeMenu}>
+                Guest List{' '}
+              </MenuItem>
+            </>
+          ) : (
+            <>
+              <MenuItem to="/me" closeMenu={closeMenu}>
+                Event Info
+              </MenuItem>
+              <MenuItem to="/actions" closeMenu={closeMenu}>
+                Actions
+              </MenuItem>
+            </>
+          )}
           {characterData.keyword === 'testing' ? (
             <>
-              <MenuItem to="/create">Create </MenuItem>
-              <MenuItem to="/admin">Admin</MenuItem>
-              <MenuItem to="/actions">Actions</MenuItem>
-              <MenuItem to="/bio">Bio</MenuItem>
-              <Text display="block">Stage: {gamemode}</Text>
+              <MenuItem to="/create" closeMenu={closeMenu}>
+                Create{' '}
+              </MenuItem>
+              <MenuItem to="/admin" closeMenu={closeMenu}>
+                Admin
+              </MenuItem>
+              <MenuItem to="/actions" closeMenu={closeMenu}>
+                Actions
+              </MenuItem>
+              <MenuItem to="/bio" closeMenu={closeMenu}>
+                Bio
+              </MenuItem>
+              <Text display="block" closeMenu={closeMenu}>
+                Stage: {gamemode}
+              </Text>
             </>
           ) : (
             <> </>
