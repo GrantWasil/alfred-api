@@ -30,7 +30,6 @@ const Header = (props) => {
         gamemode={gamemode}
         closeMenu={closeMenu}
       />
-      <ColorToggle />
     </NavBarContainer>
   );
 };
@@ -131,6 +130,7 @@ const MenuLinks = (props) => {
               Logout
             </Button>
           </MenuItem>
+          <ColorToggle />
         </Stack>
       ) : (
         <> </>
