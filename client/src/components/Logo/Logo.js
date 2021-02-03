@@ -12,7 +12,7 @@ const HeaderIcon = (props) => (
 function Logo(props) {
   return (
     <Flex {...props}>
-      <Icon as={HeaderIcon} h={12} w={12} />
+      <Icon as={HeaderIcon} h={12} w={12} fill="currentcolor"/>
       <Heading size="lg">Alfred</Heading>
     </Flex>
   );

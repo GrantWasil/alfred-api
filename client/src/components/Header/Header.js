@@ -6,7 +6,6 @@ import {
   Text,
   Button,
   Stack,
-  useColorMode,
 } from '@chakra-ui/react';
 import { Link as ReachLink } from '@reach/router';
 
@@ -34,14 +33,7 @@ const Header = (props) => {
   );
 };
 
-const ColorToggle = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <Button size="sm" rounded="md" onClick={toggleColorMode}>
-      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-    </Button>
-  );
-};
+
 
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
@@ -130,7 +122,6 @@ const MenuLinks = (props) => {
               Logout
             </Button>
           </MenuItem>
-          <ColorToggle />
         </Stack>
       ) : (
         <> </>

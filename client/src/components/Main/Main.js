@@ -10,7 +10,7 @@ import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import Admin from '../Admin/Admin';
 import Actions from '../Actions/Actions';
-import Search from '../Search/Search';
+import Footer from '../Footer/Footer';
 import api from '../../utils/Api';
 import './Main.css';
 import { Box, Container } from '@chakra-ui/react';
@@ -129,6 +129,7 @@ function Main() {
           <Bio path="/bio" characterData={characterData} />
         </Router>
       </Container>
+      <Footer />
     </Box>
   );
 }
