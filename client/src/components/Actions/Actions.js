@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Box,
   Stack,
+  Flex,
   Button,
   Heading,
   Text,
@@ -14,17 +14,32 @@ function Actions(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Stack spacing={3}>
+    <Stack spacing={3} justify="center">
       {characterData.name ? (
         <>
           <Heading>Actions</Heading>
-          <Box>
+          <Stack spacing={1}>
             <Heading size="l">Money</Heading>
             <Text>${characterData.money}</Text>
-            <Button value="pay" rounded="md" onClick={onOpen}>
+            <Button
+              value="pay"
+              rounded="md"
+              colorScheme="teal"
+              onClick={onOpen}
+            >
               Pay
             </Button>
-          </Box>
+          </Stack>
+          <Heading size="l">Abilities</Heading>
+          {characterData.abilities.map((a) => {
+            return (
+              <Flex w="m" h="m">
+                <Heading size="m">{a.name}</Heading>
+                <Text>{a.text}</Text>
+                <Text>Uses: {a.uses}</Text>
+              </Flex>
+            );
+          })}
           <Search
             isOpen={isOpen}
             onClose={onClose}
