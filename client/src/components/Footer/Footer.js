@@ -13,7 +13,7 @@ function Footer() {
   return (
     <Box position="fixed" bottom="0" w="100%" zIndex="2" as="footer">
       <Divider />
-      <Flex justifyContent="space-between" w="100%" p={8} align="center" direction={{'column' : 'row'}}>
+      <Flex justifyContent="space-between" w="100%" p={8} align="center" direction={['column', 'row']}>
         <Text>Made with Love, and also Code</Text>
         <ColorToggle />
         <Link href="https://www.github.com/GrantWasil" isExternal>

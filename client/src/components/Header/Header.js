@@ -94,6 +94,9 @@ const MenuLinks = (props) => {
               <MenuItem to="/actions" closeMenu={closeMenu}>
                 Actions
               </MenuItem>
+              <MenuItem to="/bio" closeMenu={closeMenu}>
+                Bio
+              </MenuItem>
             </>
           )}
           {characterData.keyword === 'testing' ? (
