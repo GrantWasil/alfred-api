@@ -51,7 +51,6 @@ function Actions(props) {
             </Stack>
           </GridItem>
           <GridItem rowSpan={3} colSpan={2} overflowY="scroll">
-            <Heading size="l">Your Items</Heading>
             <Stack justify="start" spacing={2}>
               {characterData.bio.map((p) => (
                 <Text>{p}</Text>
@@ -60,6 +59,7 @@ function Actions(props) {
           </GridItem>
           <GridItem rowSpan={1} colSpan={1} bg="white">
             <Stack justify="start" spacing={2}>
+            <Heading size="l">Your Items</Heading>
               {characterData.items.map((i) => (
                 <Box border="1px solid">
                   <Text>{i}</Text>

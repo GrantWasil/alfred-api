@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Router, navigate } from '@reach/router';
 import io from 'socket.io-client';
 import Login from '../Login/Login';
+import Bio from '../Bio/Bio';
 import Create from '../Create/Create';
 import Character from '../Character/Character';
 import CharacterList from '../CharacterList/CharacterList';
@@ -118,6 +119,7 @@ function Main() {
           />
           <Admin path="/admin" onUpdateGamemode={handleUpdateGamemode} />
           <Actions path="/actions" setSearch={setIsSearchOpen} characterData={characterData} />
+          <Bio path="/bio" characterData={characterData} />
         </Router>
       </Container>
       <Search
