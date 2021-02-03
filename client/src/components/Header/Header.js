@@ -74,6 +74,7 @@ const MenuLinks = (props) => {
               <MenuItem to="/create">Create </MenuItem>
               <MenuItem to="/admin">Admin</MenuItem>
               <MenuItem to="/actions">Actions</MenuItem>
+              <MenuItem to="/bio">Bio</MenuItem>
               <Text display="block">Stage: {gamemode}</Text>
             </>
           ) : (
