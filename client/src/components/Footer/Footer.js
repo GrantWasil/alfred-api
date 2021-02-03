@@ -3,7 +3,7 @@ import {
   useColorMode,
   useColorModeValue,
   Button,
-  Flex,
+  Stack,
   Text,
   Link,
   Divider,
@@ -16,19 +16,20 @@ function Footer() {
   return (
     <Box position="fixed" bottom="0" w="100%" zIndex="2" as="footer" bg={bg}>
       <Divider />
-      <Flex
+      <Stack
         justifyContent="space-between"
+        spacing={2}
         w="100%"
         p={8}
         align="center"
         direction={['column', 'row']}
       >
+        <Text>Made with Love, and also Code</Text>
         <ColorToggle />
         <Link href="https://www.github.com/GrantWasil" isExternal>
-          Grant Wasil's Github
+          Grant Wasil
         </Link>
-        <Text>Made with Love, and also Code</Text>
-      </Flex>
+      </Stack>
     </Box>
   );
 }
