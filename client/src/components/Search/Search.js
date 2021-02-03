@@ -24,14 +24,6 @@ function Search(props) {
     setInput('');
   }
 
-  function CharacterSelect({ children }) {
-    return (
-      <Button variant="ghost">
-        {children}
-      </Button>
-    );
-  }
-
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={handleClose}>
       <DrawerOverlay>
@@ -50,7 +42,11 @@ function Search(props) {
                   (c) => c.name.includes(input) && c.name !== characterData.name
                 )
                 .map((character) => {
-                  return <CharacterSelect>{character.name}</CharacterSelect>;
+                  return (
+                    <Button variant="ghost" value={character.name}>
+                      {character.name}
+                    </Button>
+                  );
                 })}
             </Stack>
           </DrawerBody>

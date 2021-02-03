@@ -26,7 +26,7 @@ function Actions(props) {
           <Box>
             <Heading size="l">Money</Heading>
             <Text>${characterData.money}</Text>
-            <Button onClick={handleOpenSearch}>Pay</Button>
+            <Button value="pay" onClick={handleOpenSearch}>Pay</Button>
           </Box>
         </>
       ) : (
