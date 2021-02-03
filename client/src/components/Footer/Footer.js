@@ -24,11 +24,11 @@ function Footer() {
         align="center"
         direction={['column', 'row']}
       >
-        <Text>Made with Love, and also Code</Text>
         <ColorToggle />
         <Link href="https://www.github.com/GrantWasil" isExternal>
           Grant Wasil
         </Link>
+        <Text>Made with Love, and also Code</Text>
       </Stack>
     </Box>
   );
