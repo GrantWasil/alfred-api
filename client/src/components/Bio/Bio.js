@@ -32,6 +32,26 @@ function Bio(props) {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
+                  Goals To Complete
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel>
+                {characterData.goals.map((g) => {
+                  return (
+                    <Flex>
+                      <Text pb={3}>
+                        <Text fontStyle="italic">{g.name}</Text>
+                        {g.text}
+                      </Text>
+                    </Flex>
+                  );
+                })}
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
                   Starting tips
                 </Box>
                 <AccordionIcon />
@@ -53,7 +73,7 @@ function Bio(props) {
                 {characterData.others.map((o) => {
                   return (
                     <Flex>
-                      <Text>
+                      <Text pb={3}>
                         <Text fontStyle="italic">{o.name}</Text>
                         {o.text}
                       </Text>
