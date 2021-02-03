@@ -15,7 +15,11 @@ function Bio(props) {
         <Heading size="l">Your clue: </Heading>
         <Text>{characterData.clue}</Text>
       </Flex>
-      <Heading size="l">Bio</Heading>
+      <Heading size="l">Starting tips:</Heading>
+      {characterData.tips.map((t) => {
+        return <Text>{t}</Text>;
+      })}
+      <Heading size="l">YourbBio:</Heading>
       {characterData.bio.map((p) => {
         return <Text>{p}</Text>;
       })}
