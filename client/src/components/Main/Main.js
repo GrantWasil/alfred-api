@@ -95,7 +95,7 @@ function Main() {
   }
 
   return (
-    <Box justifyContent="center">
+    <Box justifyContent="center" h="100vh">
       <Header
         characterData={characterData}
         onLogoutCharacter={handleLogoutCharacter}
