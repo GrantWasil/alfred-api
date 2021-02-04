@@ -13,6 +13,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Input,
 } from '@chakra-ui/react';
 import Search from '../Search/Search';
 import AbilityPopup from '../AbilityPopup/AbilityPopup';
@@ -21,13 +22,25 @@ function Actions(props) {
   const { characterData, allCharacterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isModalOpen, setIsModalOpen } = useState(false);
+  const { paymentAmount, setPaymentAmount } = useState(0);
+  const { paymentTarget, setPaymentTarget } = useState('');
+  const { paymentID, setPaymentID } = useState('');
 
   function handleModalClose() {
     setIsModalOpen(false);
+    setPaymentTarget('');
+    setPaymentAmount(0);
+    setPaymentID('');
   }
 
   function handlePayClick(e) {
-    console.log(e.target);
+    setPaymentTarget(e.target.textContent);
+    setPaymentID(e.target.value);
+    setIsModalOpen(true);
+  }
+
+  function handleInputChange(e) {
+    setPaymentAmount(e.target.value);
   }
 
   return (
@@ -63,7 +76,25 @@ function Actions(props) {
           <Modal isOpen={isModalOpen} onClose={handleModalClose}>
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader></ModalHeader>
+              <ModalHeader>Confirmation</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Stack spacing={2}>
+                <Heading size="l">Payment to {paymentTarget}</Heading>
+                <Text>Amount</Text>
+                <Input
+                  value={paymentAmount}
+                  onChange={handleInputChange}
+                >
+                </Input>
+                </Stack>
+              </ModalBody>
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3}>
+                  Send Payment
+                </Button>
+                <Button colorScheme="red" onClick={handleModalClose}>Cancel</Button>
+              </ModalFooter>
             </ModalContent>
           </Modal>
         </>
