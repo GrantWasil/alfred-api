@@ -40,6 +40,7 @@ function Actions(props) {
                 onClick={onOpen}
                 p={2}
                 size="lg"
+                maxH="100px"
               >
                 <Flex>
                   <Flex direction="column">
@@ -61,6 +62,7 @@ function Actions(props) {
                 onClick={onOpen}
                 p={2}
                 size="lg"
+                maxH="100px"
               >
                 <Flex>{i}</Flex>
               </Button>
