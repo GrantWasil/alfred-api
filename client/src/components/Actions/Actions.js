@@ -37,22 +37,6 @@ function Actions(props) {
               <AbilityPopup ability={a} targetAbility={onOpen}/>
             );
           })}
-          <Heading size="l">Items</Heading>
-          {characterData.items.map((i) => {
-            return (
-              <Button
-                varient="ghost"
-                value="item"
-                rounded="md"
-                onClick={onOpen}
-                p={2}
-                size="lg"
-                maxH="100px"
-              >
-                <Flex>{i}</Flex>
-              </Button>
-            );
-          })}
           <Search
             isOpen={isOpen}
             onClose={onClose}

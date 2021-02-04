@@ -85,6 +85,25 @@ function Bio(props) {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
+                  Your items
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel>
+                {characterData.items.map((i) => {
+                  return (
+                    <Flex>
+                      <Text pb={3}>
+                        {i}
+                      </Text>
+                    </Flex>
+                  );
+                })}
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
                   Your bio
                 </Box>
                 <AccordionIcon />
