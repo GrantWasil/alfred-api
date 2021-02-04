@@ -20,14 +20,14 @@ function AbilityPopup(props) {
     <Button
       variant="ghost"
       value="ability"
-      colorScheme={ability.uses !== 0 ? "teal" : "red" }
       disabled={ability.uses !== 0 ? false : true }
       onClick={onOpen}
+      size="lg"
     >
-      {ability.text}
+      {ability.name}
     </Button>
 
-    <Modal isOpen={isOpen} onClick={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{ability.text}</ModalHeader>
