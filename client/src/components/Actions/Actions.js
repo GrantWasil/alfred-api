@@ -33,13 +33,15 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <Flex>
-                <Flex direction="column">
-                <Heading size="m">{a.name}</Heading>
-                <Text>{a.text}</Text>
+              <Button varient="ghost" value="ability">
+                <Flex>
+                  <Flex direction="column">
+                    <Heading size="m">{a.name}</Heading>
+                    <Text>{a.text}</Text>
+                  </Flex>
+                  <Text pl={1}>Uses: {a.uses}</Text>
                 </Flex>
-                <Text>Uses: {a.uses}</Text>
-              </Flex>
+              </Button>
             );
           })}
           <Search
