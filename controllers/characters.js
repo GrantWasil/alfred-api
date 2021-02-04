@@ -126,7 +126,7 @@ async function payCharacter(req, res) {
   try {
     const opts = { session, new: true };
     const A = await Character.findByIdAndUpdate(
-      { sender },
+      sender,
       { $inc: { money: -amount } },
       opts,
     );
@@ -135,7 +135,7 @@ async function payCharacter(req, res) {
     }
 
     const B = await Character.findByIdAndUpdate(
-      { receiver },
+      receiver,
       { $inc: { money: amount } },
       opts,
     );
