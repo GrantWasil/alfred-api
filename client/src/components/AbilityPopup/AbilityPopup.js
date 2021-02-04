@@ -13,8 +13,14 @@ import {
 } from "@chakra-ui/react"
 
 function AbilityPopup(props) {
-  const { ability } = props;
+  const { ability, targetAbility } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  function useAbility() {
+    onClose();
+    targetAbility();
+  }
+
   return (
     <>
     <Button
@@ -38,7 +44,7 @@ function AbilityPopup(props) {
         </ModalBody>
 
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button colorScheme="blue" mr={3} onClick={useAbility}>
             Use
           </Button>
           <Button onClick={onClose}>Close</Button>

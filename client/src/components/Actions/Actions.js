@@ -34,7 +34,7 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <AbilityPopup ability={a} />
+              <AbilityPopup ability={a} targetAbility={onOpen}/>
             );
           })}
           <Heading size="l">Items</Heading>
