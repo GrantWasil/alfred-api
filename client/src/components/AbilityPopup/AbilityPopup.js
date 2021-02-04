@@ -30,7 +30,7 @@ function AbilityPopup(props) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{ability.text}</ModalHeader>
+        <ModalHeader>{ability.name}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Text>{ability.text}</Text>
