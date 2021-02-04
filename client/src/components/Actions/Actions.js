@@ -19,7 +19,7 @@ import Search from '../Search/Search';
 import AbilityPopup from '../AbilityPopup/AbilityPopup';
 
 function Actions(props) {
-  const { characterData, allCharacterData } = props;
+  const { characterData, allCharacterData, onPayMoney } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ paymentAmount, setPaymentAmount ] = useState(0);
@@ -37,6 +37,15 @@ function Actions(props) {
     setPaymentID(e.target.value);
     setPaymentTarget(e.target.textContent);
     setIsModalOpen(true);
+  }
+
+  function onPayMoneySubmit() {
+    onPayMoney(paymentAmount, paymentID)
+    setIsModalOpen(false);
+    onClose();
+    setPaymentTarget('');
+    setPaymentAmount(0);
+    setPaymentID('');
   }
 
   function handleInputChange(e) {
@@ -85,12 +94,13 @@ function Actions(props) {
                 <Input
                   value={paymentAmount}
                   onChange={handleInputChange}
+                  placeholder="0"
                 >
                 </Input>
                 </Stack>
               </ModalBody>
               <ModalFooter>
-                <Button colorScheme="blue" mr={3}>
+                <Button colorScheme="blue" mr={3} onClick={onPayMoneySubmit}>
                   Send Payment
                 </Button>
                 <Button colorScheme="red" onClick={handleModalClose}>Cancel</Button>
