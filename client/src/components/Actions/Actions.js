@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Stack,
   Flex,
@@ -6,6 +6,13 @@ import {
   Heading,
   Text,
   useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import Search from '../Search/Search';
 import AbilityPopup from '../AbilityPopup/AbilityPopup';
@@ -13,6 +20,15 @@ import AbilityPopup from '../AbilityPopup/AbilityPopup';
 function Actions(props) {
   const { characterData, allCharacterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isModalOpen, setIsModalOpen } = useState(false);
+
+  function handleModalClose() {
+    setIsModalOpen(false);
+  }
+
+  function handlePayClick(e) {
+    console.log(e.target);
+  }
 
   return (
     <Stack spacing={3} justify="center" textAlign="center">
@@ -42,7 +58,14 @@ function Actions(props) {
             onClose={onClose}
             allCharacterData={allCharacterData}
             characterData={characterData}
+            onClick={handlePayClick}
           />
+          <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader></ModalHeader>
+            </ModalContent>
+          </Modal>
         </>
       ) : (
         <></>

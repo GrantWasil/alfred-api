@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 
 function Search(props) {
-  const { isOpen, onClose, allCharacterData, characterData } = props;
+  const { isOpen, onClose, allCharacterData, characterData, onClick } = props;
   const [input, setInput] = useState('');
 
   function handleInputChange(e) {
@@ -38,7 +38,7 @@ function Search(props) {
                 )
                 .map((character) => {
                   return (
-                    <Button variant="ghost" value={character._id}>
+                    <Button variant="ghost" value={character._id} onClick={onClick}>
                       {character.name}
                     </Button>
                   );
