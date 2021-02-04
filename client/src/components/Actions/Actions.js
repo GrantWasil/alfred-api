@@ -33,7 +33,7 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <Button varient="ghost" value="ability">
+              <Button varient="ghost" value="ability" onClick={onOpen}>
                 <Flex>
                   <Flex direction="column">
                     <Heading size="m">{a.name}</Heading>
@@ -43,6 +43,14 @@ function Actions(props) {
                 </Flex>
               </Button>
             );
+          })}
+          <Heading size="l">Items</Heading>
+          { characterData.items.map((i) => {
+            return (
+              <Button varient="ghost" value="item" onClick={onOpen}>
+                <Flex>{i.text}</Flex>
+              </Button>
+            )
           })}
           <Search
             isOpen={isOpen}
