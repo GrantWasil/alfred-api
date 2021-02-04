@@ -36,6 +36,8 @@ function Actions(props) {
   function handlePayClick(e) {
     let id = e.target.value;
     let target = e.target.textContent;
+    id = id.toString();
+    target = target.toString();
     console.log(id);
     console.log(target);
     setPaymentID(id);
