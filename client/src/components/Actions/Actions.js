@@ -18,7 +18,7 @@ function Actions(props) {
       {characterData.name ? (
         <>
           <Heading>Actions</Heading>
-          <Stack spacing={1}>
+          <Stack spacing={1} align="center">
             <Heading size="l">Money</Heading>
             <Text>${characterData.money}</Text>
             <Button
@@ -33,24 +33,36 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <Button varient="ghost" value="ability" onClick={onOpen}>
+              <Button
+                varient="ghost"
+                value="ability"
+                rounded="md"
+                onClick={onOpen}
+                p={2}
+              >
                 <Flex>
                   <Flex direction="column">
                     <Heading size="m">{a.name}</Heading>
                     <Text>{a.text}</Text>
                   </Flex>
-                  <Text pl={1}>Uses: {a.uses}</Text>
+                  <Text pl={2}>Uses: {a.uses}</Text>
                 </Flex>
               </Button>
             );
           })}
           <Heading size="l">Items</Heading>
-          { characterData.items.map((i) => {
+          {characterData.items.map((i) => {
             return (
-              <Button varient="ghost" value="item" onClick={onOpen}>
-                <Flex>{i.text}</Flex>
+              <Button
+                varient="ghost"
+                value="item"
+                rounded="md"
+                onClick={onOpen}
+                p={2}
+              >
+                <Flex>{i}</Flex>
               </Button>
-            )
+            );
           })}
           <Search
             isOpen={isOpen}
