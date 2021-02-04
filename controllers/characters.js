@@ -117,7 +117,7 @@ module.exports.getAllCharacters = (req, res, next) => {
     .catch(() => next(new Error('Not Found')));
 };
 
-async function payCharacter(req) {
+async function payCharacter(req, res) {
   const sender = req.character._id;
   const { amount, receiver } = req.body.data;
   const session = await mongoose.startSession();
@@ -141,10 +141,12 @@ async function payCharacter(req) {
 
     await session.commitTransaction();
     session.endSession();
+    res.status(200).send(A);
     return { from: A, to: B };
   } catch (error) {
     await session.abortTransaction();
     session.endSession();
+    res.status(500).send(error.message);
     throw error;
   }
 }
