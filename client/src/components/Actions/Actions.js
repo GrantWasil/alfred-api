@@ -39,6 +39,7 @@ function Actions(props) {
                 rounded="md"
                 onClick={onOpen}
                 p={2}
+                size="lg"
               >
                 <Flex>
                   <Flex direction="column">
@@ -59,6 +60,7 @@ function Actions(props) {
                 rounded="md"
                 onClick={onOpen}
                 p={2}
+                size="lg"
               >
                 <Flex>{i}</Flex>
               </Button>
