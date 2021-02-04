@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const Character = require('../models/character');
 const { NODE_ENV, JWT_SECRET } = require('../utils/constants');
 
@@ -115,3 +116,37 @@ module.exports.getAllCharacters = (req, res, next) => {
     })
     .catch(() => next(new Error('Not Found')));
 };
+
+async function payCharacter(req) {
+  const sender = req.character._id;
+  const { amount, receiver } = req.body.data;
+  const session = await mongoose.startSession();
+  session.startTransaction();
+  try {
+    const opts = { session, new: true };
+    const A = await Character.findByIdAndUpdate(
+      { sender },
+      { $inc: { money: -amount } },
+      opts,
+    );
+    if (A.money < 0) {
+      throw new Error(`Insufficient funds: ${A.money + amount}`);
+    }
+
+    const B = await Character.findByIdAndUpdate(
+      { receiver },
+      { $inc: { money: amount } },
+      opts,
+    );
+
+    await session.commitTransaction();
+    session.endSession();
+    return { from: A, to: B };
+  } catch (error) {
+    await session.abortTransaction();
+    session.endSession();
+    throw error;
+  }
+}
+
+module.exports.payCharacter = payCharacter;
