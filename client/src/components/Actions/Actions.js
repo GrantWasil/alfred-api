@@ -35,9 +35,9 @@ function Actions(props) {
 
   function handlePayClick(e) {
     console.log(e.target.getAttribute('value'));
-    console.log(e.target.getAttribute('innerText'));
-    setPaymentTarget(e.target.getAttribute('innerText'));
+    console.log(e.target.textContent);
     setPaymentID(e.target.getAttribute('value'));
+    setPaymentTarget(e.target.textContent);
     setIsModalOpen(true);
   }
 
