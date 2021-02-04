@@ -21,10 +21,10 @@ import AbilityPopup from '../AbilityPopup/AbilityPopup';
 function Actions(props) {
   const { characterData, allCharacterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isModalOpen, setIsModalOpen } = useState(false);
-  const { paymentAmount, setPaymentAmount } = useState(0);
-  const { paymentTarget, setPaymentTarget } = useState('');
-  const { paymentID, setPaymentID } = useState('');
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
+  const [ paymentAmount, setPaymentAmount ] = useState(0);
+  const [ paymentTarget, setPaymentTarget ] = useState('');
+  const [ paymentID, setPaymentID ] = useState('');
 
   function handleModalClose() {
     setIsModalOpen(false);
@@ -34,14 +34,8 @@ function Actions(props) {
   }
 
   function handlePayClick(e) {
-    let id = e.target.value;
-    let target = e.target.textContent;
-    id = id.toString();
-    target = target.toString();
-    console.log(id);
-    console.log(target);
-    setPaymentID(id);
-    setPaymentTarget(target);
+    setPaymentID(e.target.value);
+    setPaymentTarget(e.target.textContent);
     setIsModalOpen(true);
   }
 
