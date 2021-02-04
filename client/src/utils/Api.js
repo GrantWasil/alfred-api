@@ -74,6 +74,24 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
+  sendMoney(amount, id){
+    return fetch(`${this._baseUrl}/characters/pay/${id}`, {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json',
+      },
+      body: {
+        amount
+      }
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    })
+  }
 }
 
 const api = new Api({

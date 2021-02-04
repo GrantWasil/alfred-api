@@ -13,7 +13,7 @@ import Actions from '../Actions/Actions';
 import Footer from '../Footer/Footer';
 import api from '../../utils/Api';
 import './Main.css';
-import { Box, Container } from '@chakra-ui/react';
+import { Box, Container, useToast } from '@chakra-ui/react';
 
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,6 +23,7 @@ function Main() {
   const [gamemode, setGamemode] = useState(1);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const socket = io();
+  const toast = useToast();
 
   React.useEffect(() => {
     api
@@ -48,19 +49,21 @@ function Main() {
     socket.on('gameMode', (data) => {
       setGamemode(data);
     });
-    socket.on('payment', (data) => {
-      if (data.receiver !== characterData.name) {
-        return;
-      }
-      console.log('You got money!');
-    });
-    socket.on('ability', (data) => {
-      if (data.receiver !== characterData.name) {
-        return;
-      }
-      console.log('You have been abilitied!');
-    });
-  }, [characterData, socket]);
+    socket.on('payment', (data) => handleSocketPayment(data));
+  });
+
+  function handleSocketPayment(data) {
+    if (data.receiver !== characterData._id) {
+      return;
+    }
+    toast({
+      title: "Money Recieved",
+      description: `${data.sender} has sent you ${data.amount}`,
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    })
+  }
 
   function handleCreateCharacter(data) {
     api
@@ -94,6 +97,23 @@ function Main() {
     socket.emit('gameMode', data);
   }
 
+  function handlePayMoney(amount, id) {
+    api.sendMoney(amount, id)
+      .then((res) => {
+        if (res.name) {
+          const sender = res.name;
+          toast({
+            title: "Money sent",
+            description: "Your balance has been updated",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          })
+          socket.emit('payment', { amount, sender, id})
+        }
+      })
+  }
+
   return (
     <Box justifyContent="center" h="100%">
       <Header
@@ -125,6 +145,7 @@ function Main() {
             setSearch={setIsSearchOpen}
             characterData={characterData}
             allCharacterData={allCharacterData}
+            onPayMoney={handlePayMoney}
           />
           <Bio path="/bio" characterData={characterData} />
         </Router>
