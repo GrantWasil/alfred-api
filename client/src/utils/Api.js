@@ -1,3 +1,5 @@
+import { json } from "body-parser";
+
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -82,9 +84,9 @@ class Api {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json',
       },
-      body: {
-        amount
-      }
+      body: JSON.stringify({
+        amount,
+      })
     }).then((res) => {
       if (res.ok) {
         return res.json();
