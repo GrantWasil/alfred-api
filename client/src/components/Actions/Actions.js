@@ -8,6 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import Search from '../Search/Search';
+import AbilityPopup from '../AbilityPopup/AbilityPopup';
 
 function Actions(props) {
   const { characterData, allCharacterData } = props;
@@ -33,23 +34,7 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <Button
-                varient="ghost"
-                value="ability"
-                rounded="md"
-                onClick={onOpen}
-                p={2}
-                size="lg"
-                maxH="100px"
-              >
-                <Flex>
-                  <Flex direction="column">
-                    <Heading size="m">{a.name}</Heading>
-                    <Text>{a.text}</Text>
-                  </Flex>
-                  <Text pl={2}>Uses: {a.uses}</Text>
-                </Flex>
-              </Button>
+              <AbilityPopup ability={a} />
             );
           })}
           <Heading size="l">Items</Heading>
