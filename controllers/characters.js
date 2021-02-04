@@ -120,7 +120,7 @@ module.exports.getAllCharacters = (req, res, next) => {
 async function payCharacter(req, res) {
   const sender = req.character._id;
   const { amount } = req.body.data;
-  const { receiver } = req.params;
+  const receiver = req.params.id;
   const session = await mongoose.startSession();
   session.startTransaction();
   try {
