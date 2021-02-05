@@ -86,6 +86,9 @@ function Main() {
         duration: 5000,
         isClosable: true,
       })
+      api.getCharacterData().then((res) => {
+        setCharacterData(res.character);
+      });
     }
   }
 
@@ -140,6 +143,7 @@ function Main() {
   }
 
   function handleUseAbility(ability, id) {
+    console.log(ability, id);
     const targetAbility = ability.name;
     api.useAbility(targetAbility)
       .then((res) => {
