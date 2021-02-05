@@ -56,6 +56,7 @@ function Main() {
   }, []);
 
   function handleSocketPayment(data) {
+    console.log(data);
     if (data.receiver !== characterData._id) {
       return;
     } else {
@@ -114,6 +115,9 @@ function Main() {
             isClosable: true,
           })
           socket.emit('payment', { amount, sender, id})
+          api.getCharacterData().then((res) => {
+            setCharacterData(res.character);
+          });
         }
       })
   }
