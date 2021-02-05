@@ -152,4 +152,18 @@ async function payCharacter(req, res) {
   }
 }
 
+module.exports.useAbility = (req, res, next) => {
+  const { user } = req.character._id;
+  const { ability } = req.body;
+  Character.findByIdAndUpdate(
+    { _id: user },
+    { 'abilities.name': ability },
+    { $inc: { 'abilities.$.uses': -1 } },
+  )
+    .then((character) => {
+      res.status(200).send(character);
+    })
+    .catch((err) => next(err));
+};
+
 module.exports.payCharacter = payCharacter;
