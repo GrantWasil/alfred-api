@@ -50,6 +50,8 @@ function Main() {
       setGamemode(data);
     });
     socket.on('payment', (data) => handleSocketPayment(data));
+
+    return () => socket.disconnect();
   });
 
   function handleSocketPayment(data) {
