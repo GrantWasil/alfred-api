@@ -56,7 +56,11 @@ function Main() {
   }, []);
 
   function handleSocketPayment(data) {
-    if (data.id !== characterData.character._id) {
+    console.log(data.id)
+    console.log(characterData);
+    console.log(characterData._id);
+    console.log(characterData.id === data.id);
+    if (data.id !== characterData._id) {
       return;
     } else {
       toast({
