@@ -153,7 +153,7 @@ async function payCharacter(req, res) {
 }
 
 module.exports.useAbility = (req, res) => {
-  const { user } = req.character._id;
+  const user = req.character._id;
   const { ability } = req.body;
   Character.findByIdAndUpdate(
     { _id: user },
