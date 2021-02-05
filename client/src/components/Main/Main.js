@@ -57,7 +57,7 @@ function Main() {
 
   function handleSocketPayment(data) {
     console.log(data);
-    if (data.receiver !== characterData._id) {
+    if (data.id !== characterData._id) {
       return;
     } else {
       toast({
@@ -67,6 +67,9 @@ function Main() {
         duration: 5000,
         isClosable: true,
       })
+      api.getCharacterData().then((res) => {
+        setCharacterData(res.character);
+      });
     }
   }
 
