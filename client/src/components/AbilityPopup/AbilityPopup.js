@@ -26,6 +26,10 @@ function AbilityPopup(props) {
 
   function handleUseAbilitySubmit(e) {
     setAbilityID(e.target.value);
+    submitData();
+  }
+
+  function submitData() {
     onUseAbility(ability, abilityID);
     handleAbilitySearchClose();
   }
