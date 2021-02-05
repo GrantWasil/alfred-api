@@ -53,7 +53,7 @@ function Main() {
 
     return () => socket.disconnect();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [characterData]);
+  }, [characterData, socket]);
 
   function handleSocketPayment(data) {
     console.log(data.id)
