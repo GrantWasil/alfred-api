@@ -152,7 +152,7 @@ async function payCharacter(req, res) {
   }
 }
 
-module.exports.useAbility = (req, res, next) => {
+module.exports.useAbility = (req, res) => {
   const { user } = req.character._id;
   const { ability } = req.body;
   Character.findByIdAndUpdate(
@@ -163,7 +163,7 @@ module.exports.useAbility = (req, res, next) => {
     .then((character) => {
       res.status(200).send(character);
     })
-    .catch((err) => next(err));
+    .catch((err) => res.status(500).send(err.message));
 };
 
 module.exports.payCharacter = payCharacter;
