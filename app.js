@@ -36,8 +36,8 @@ io.on('connection', (socket) => {
     io.emit('payment', { amount, sender, id });
   });
 
-  socket.on('ability', ({ ability, sender, receiver }) => {
-    io.emit('ability', { ability, sender, receiver });
+  socket.on('ability', ({ ability, sender, id }) => {
+    io.emit('ability', { ability, sender, id });
   });
 
   socket.on('disconnect', () => {
