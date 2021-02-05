@@ -156,8 +156,12 @@ module.exports.useAbility = (req, res) => {
   const user = req.character._id;
   const { ability } = req.body;
   Character.findByIdAndUpdate(
-    { _id: user, 'abilities.name': ability },
-    { $inc: { uses: -1 } },
+    { _id: user },
+    { $inc: { 'abilities.$[el].uses': -1 } },
+    {
+      arrayFilters: [{ 'el.name': ability }],
+      new: true,
+    },
   )
     .then((character) => {
       res.status(200).send(character);
