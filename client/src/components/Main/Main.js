@@ -40,7 +40,7 @@ function Main() {
     api.getAllCharacters().then((res) => {
       setAllCharacterData(res.characters);
     });
-  }, []);
+  }, [])
 
   React.useEffect(() => {
     socket.on('status', (data) => {
@@ -52,7 +52,8 @@ function Main() {
     socket.on('payment', (data) => handleSocketPayment(data));
 
     return () => socket.disconnect();
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function handleSocketPayment(data) {
     if (data.receiver !== characterData._id) {
