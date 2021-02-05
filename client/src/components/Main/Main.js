@@ -55,14 +55,15 @@ function Main() {
   function handleSocketPayment(data) {
     if (data.receiver !== characterData._id) {
       return;
+    } else {
+      toast({
+        title: "Money Recieved",
+        description: `${data.sender} has sent you ${data.amount}`,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      })
     }
-    toast({
-      title: "Money Recieved",
-      description: `${data.sender} has sent you ${data.amount}`,
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-    })
   }
 
   function handleCreateCharacter(data) {
