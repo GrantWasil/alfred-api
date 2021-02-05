@@ -25,6 +25,7 @@ function AbilityPopup(props) {
   }
 
   function handleUseAbilitySubmit(e) {
+    console.log(e.target.value);
     setAbilityID(e.target.value);
     submitData();
   }
@@ -58,7 +59,7 @@ function AbilityPopup(props) {
           <ModalCloseButton />
           <ModalBody>
             <Text>{ability.text}</Text>
-            <Text>Uses: {ability.uses}</Text>
+            <Text>Uses: {ability.uses > 0 ? ability.uses : 'Unlimited Uses'}</Text>
           </ModalBody>
 
           <ModalFooter>
