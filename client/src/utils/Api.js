@@ -1,5 +1,3 @@
-import { json } from "body-parser";
-
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -86,6 +84,24 @@ class Api {
       },
       body: JSON.stringify({
         amount,
+      })
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    })
+  }
+
+  useAbility(ability){
+    return fetch(`${this._baseUrl}/characters/ability`, {
+      method: 'PATCH',
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ability,
       })
     }).then((res) => {
       if (res.ok) {

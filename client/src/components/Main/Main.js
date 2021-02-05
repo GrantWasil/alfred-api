@@ -51,6 +51,8 @@ function Main() {
     });
     socket.on('payment', (data) => handleSocketPayment(data));
 
+    socket.on('ability', (data) => handleSocketAbility(data));
+
     return () => socket.disconnect();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [characterData, socket]);
@@ -69,6 +71,20 @@ function Main() {
       api.getCharacterData().then((res) => {
         setCharacterData(res.character);
       });
+    }
+  }
+
+  function handleSocketAbility(data) {
+    if (data.id !== characterData._id) {
+      return;
+    } else {
+      toast({
+        title: `Ability Used On You`,
+        description: `${data.ability.name} has been used on you. Reach out to Grant if needed.`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+      })
     }
   }
 
@@ -110,16 +126,33 @@ function Main() {
         if (res.name) {
           const sender = res.name;
           toast({
-            title: "Money sent",
+            title: "Money Sent",
             description: "Your balance has been updated",
             status: "success",
             duration: 5000,
             isClosable: true,
           })
           socket.emit('payment', { amount, sender, id})
-          api.getCharacterData().then((res) => {
-            setCharacterData(res.character);
-          });
+          setCharacterData(res);
+        }
+      })
+  }
+
+  function handleUseAbility(ability, id) {
+    const targetAbility = ability.name;
+    api.useAbility(targetAbility)
+      .then((res) => {
+        if (res.name) {
+          const sender = res.name;
+          setCharacterData(res);
+          toast({
+            title: "Ability Used",
+            description: "Your target has been notified",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          })
+          socket.emit('ability', { ability, sender, id })
         }
       })
   }
@@ -156,6 +189,7 @@ function Main() {
             characterData={characterData}
             allCharacterData={allCharacterData}
             onPayMoney={handlePayMoney}
+            onUseAbility={handleUseAbility}
           />
           <Bio path="/bio" characterData={characterData} />
         </Router>

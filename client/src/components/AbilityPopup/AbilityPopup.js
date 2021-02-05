@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -10,11 +10,26 @@ import {
   useDisclosure,
   Button,
   Text,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react';
+import Search from '../Search/Search';
 
 function AbilityPopup(props) {
-  const { ability, targetAbility } = props;
+  const { ability, targetAbility, onUseAbility, allCharacterData, characterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [ isAbilitySearchOpen, setIsAbilitySearchOpen ] = useState(false);
+  const [ abilityID, setAbilityID ] = useState('');
+
+  function handleAbilitySearchClose() {
+    setIsAbilitySearchOpen(false);
+    setAbilityID('');
+  }
+
+  function handleUseAbilitySubmit(e) {
+    setAbilityID(e.target.value);
+    onUseAbility(ability, abilityID);
+    handleAbilitySearchClose();
+  }
+
 
   function useAbility() {
     onClose();
@@ -23,36 +38,43 @@ function AbilityPopup(props) {
 
   return (
     <>
-    <Button
-      variant="ghost"
-      value="ability"
-      disabled={ability.uses !== 0 ? false : true }
-      onClick={onOpen}
-      size="lg"
-    >
-      {ability.name}
-    </Button>
+      <Button
+        variant="ghost"
+        value="ability"
+        disabled={ability.uses !== 0 ? false : true}
+        onClick={onOpen}
+        size="lg"
+      >
+        {ability.name}
+      </Button>
 
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{ability.name}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Text>{ability.text}</Text>
-          <Text>Uses: {ability.uses}</Text>
-        </ModalBody>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{ability.name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>{ability.text}</Text>
+            <Text>Uses: {ability.uses}</Text>
+          </ModalBody>
 
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={useAbility}>
-            Use
-          </Button>
-          <Button onClick={onClose}>Close</Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={useAbility}>
+              Use
+            </Button>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      <Search
+        isOpen={isAbilitySearchOpen}
+        onClose={handleAbilitySearchClose}
+        allCharacterData={allCharacterData}
+        characterData={characterData}
+        onClick={handleUseAbilitySubmit}
+      />
     </>
-  )
+  );
 }
 
 export default AbilityPopup;

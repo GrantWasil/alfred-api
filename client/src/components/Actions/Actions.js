@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Stack,
-  Flex,
   Button,
   Heading,
   Text,
@@ -19,12 +18,12 @@ import Search from '../Search/Search';
 import AbilityPopup from '../AbilityPopup/AbilityPopup';
 
 function Actions(props) {
-  const { characterData, allCharacterData, onPayMoney } = props;
+  const { characterData, allCharacterData, onPayMoney, onUseAbility } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [ isModalOpen, setIsModalOpen ] = useState(false);
-  const [ paymentAmount, setPaymentAmount ] = useState(0);
-  const [ paymentTarget, setPaymentTarget ] = useState('');
-  const [ paymentID, setPaymentID ] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [paymentAmount, setPaymentAmount] = useState(0);
+  const [paymentTarget, setPaymentTarget] = useState('');
+  const [paymentID, setPaymentID] = useState('');
 
   function handleModalClose() {
     setIsModalOpen(false);
@@ -40,12 +39,9 @@ function Actions(props) {
   }
 
   function onPayMoneySubmit() {
-    onPayMoney(paymentAmount, paymentID)
-    setIsModalOpen(false);
+    onPayMoney(paymentAmount, paymentID);
     onClose();
-    setPaymentTarget('');
-    setPaymentAmount(0);
-    setPaymentID('');
+    handleModalClose();
   }
 
   function handleInputChange(e) {
@@ -72,7 +68,13 @@ function Actions(props) {
           <Heading size="l">Abilities</Heading>
           {characterData.abilities.map((a) => {
             return (
-              <AbilityPopup ability={a} targetAbility={onOpen}/>
+              <AbilityPopup
+                ability={a}
+                targetAbility={onOpen}
+                onUseAbility={onUseAbility}
+                allCharacterData={allCharacterData}
+                characterData={characterData}
+              />
             );
           })}
           <Search
@@ -89,21 +91,22 @@ function Actions(props) {
               <ModalCloseButton />
               <ModalBody>
                 <Stack spacing={2}>
-                <Heading size="l">Payment to {paymentTarget}</Heading>
-                <Text>Amount</Text>
-                <Input
-                  value={paymentAmount}
-                  onChange={handleInputChange}
-                  placeholder="0"
-                >
-                </Input>
+                  <Heading size="l">Payment to {paymentTarget}</Heading>
+                  <Text>Amount</Text>
+                  <Input
+                    value={paymentAmount}
+                    onChange={handleInputChange}
+                    placeholder="0"
+                  ></Input>
                 </Stack>
               </ModalBody>
               <ModalFooter>
                 <Button colorScheme="blue" mr={3} onClick={onPayMoneySubmit}>
                   Send Payment
                 </Button>
-                <Button colorScheme="red" onClick={handleModalClose}>Cancel</Button>
+                <Button colorScheme="red" onClick={handleModalClose}>
+                  Cancel
+                </Button>
               </ModalFooter>
             </ModalContent>
           </Modal>
