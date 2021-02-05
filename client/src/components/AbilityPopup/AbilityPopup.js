@@ -29,7 +29,7 @@ function AbilityPopup(props) {
     setAbilityID('');
   }
 
-  function handleUseAbilitySubmit(e) {1
+  function handleUseAbilitySubmit(e) {
     setAbilityID(e.target.value)
   }
 
