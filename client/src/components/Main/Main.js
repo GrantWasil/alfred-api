@@ -75,6 +75,7 @@ function Main() {
   }
 
   function handleSocketAbility(data) {
+    console.log(data);
     if (data.id !== characterData._id) {
       return;
     } else {
