@@ -14,7 +14,7 @@ import {
 import Search from '../Search/Search';
 
 function AbilityPopup(props) {
-  const { ability, targetAbility, onUseAbility, allCharacterData, characterData } = props;
+  const { ability, onUseAbility, allCharacterData, characterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [ isAbilitySearchOpen, setIsAbilitySearchOpen ] = useState(false);
   const [ abilityID, setAbilityID ] = useState('');
@@ -30,10 +30,9 @@ function AbilityPopup(props) {
     handleAbilitySearchClose();
   }
 
-
   function useAbility() {
     onClose();
-    targetAbility();
+    setIsAbilitySearchOpen(true);
   }
 
   return (

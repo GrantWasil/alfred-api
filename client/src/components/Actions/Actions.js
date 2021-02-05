@@ -70,7 +70,6 @@ function Actions(props) {
             return (
               <AbilityPopup
                 ability={a}
-                targetAbility={onOpen}
                 onUseAbility={onUseAbility}
                 allCharacterData={allCharacterData}
                 characterData={characterData}
