@@ -57,7 +57,8 @@ function Main() {
 
   function handleSocketPayment(data) {
     console.log(data);
-    if (data.id !== characterData._id) {
+    // eslint-disable-next-line eqeqeq
+    if (data.id != characterData._id) {
       return;
     } else {
       toast({
