@@ -12,22 +12,25 @@ import {
   Text,
 } from '@chakra-ui/react';
 import Search from '../Search/Search';
+import useStateWithCallback from 'use-state-with-callback';
 
 function AbilityPopup(props) {
   const { ability, onUseAbility, allCharacterData, characterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [ isAbilitySearchOpen, setIsAbilitySearchOpen ] = useState(false);
-  const [ abilityID, setAbilityID ] = useState('');
+  const [ abilityID, setAbilityID ] = useStateWithCallback('', id => {
+    if (id !== '') {
+      submitData();
+    }
+  });
 
   function handleAbilitySearchClose() {
     setIsAbilitySearchOpen(false);
     setAbilityID('');
   }
 
-  function handleUseAbilitySubmit(e) {
-    setAbilityID(e.target.value, () => {
-      submitData();
-    });
+  function handleUseAbilitySubmit(e) {1
+    setAbilityID(e.target.value)
   }
 
   function submitData() {
