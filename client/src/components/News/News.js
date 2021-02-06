@@ -8,17 +8,16 @@ function News() {
       alignContent="space-between"
       textAlign="center"
       flexDirection="column"
-      h="100%"
     >
       <Stack padding={4}>
         <Stack padding={3}>
           <Heading as="h1">Casino Fatale</Heading>
-          <Heading size="3xl">LET THE GOOD TIMES ROLL!</Heading>
-          <Heading size="md">
+          <Heading size="2xl">LET THE GOOD TIMES ROLL!</Heading>
+          <Heading size="sm">
             Hotel D’Etoile is having its best year ever. To celebrate, it is
             hosting a charity auction in aid of the local orphanage.
           </Heading>
-          <Heading size="md">
+          <Heading size="sm">
             If you haven’t already received your invitation then you won’t be
             going, as the charity auction is strictly an invitation-only affair.
           </Heading>

@@ -39,7 +39,7 @@ function AbilityPopup(props) {
       <Button
         variant="ghost"
         value="ability"
-        disabled={true}//{ability.uses !== 0 ? false : true}
+        disabled={ability.uses !== 0 ? false : true}
         onClick={onOpen}
         size="lg"
       >
@@ -57,7 +57,7 @@ function AbilityPopup(props) {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={useAbility}>
+            <Button colorScheme="blue" mr={3} onClick={useAbility} disabled={true}>
               Use
             </Button>
             <Button onClick={onClose}>Close</Button>
