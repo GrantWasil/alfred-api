@@ -93,9 +93,7 @@ function Bio(props) {
                 {characterData.items.map((i) => {
                   return (
                     <Flex>
-                      <Text pb={3}>
-                        {i}
-                      </Text>
+                      <Text pb={3}>{i}</Text>
                     </Flex>
                   );
                 })}
@@ -109,9 +107,13 @@ function Bio(props) {
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel>
-                {characterData.bio.map((p) => {
-                  return <Text pb={3}>{p}</Text>;
-                })}
+                {characterData.bio.length === 0 ? (
+                  <Text>You have no items currently</Text>
+                ) : (
+                  characterData.bio.map((p) => {
+                    return <Text pb={3}>{p}</Text>;
+                  })
+                )}
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
