@@ -39,7 +39,7 @@ function AbilityPopup(props) {
       <Button
         variant="ghost"
         value="ability"
-        disabled={ability.uses !== 0 ? false : true}
+        disabled={true}//{ability.uses !== 0 ? false : true}
         onClick={onOpen}
         size="lg"
       >

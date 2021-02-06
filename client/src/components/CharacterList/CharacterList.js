@@ -4,7 +4,9 @@ import { Box, List, ListItem } from '@chakra-ui/react';
 
 function CharacterList() {
   return (
-    <Box>
+    <Box
+      h="100%"
+    >
       <Heading level="3" alignSelf="center">
         Casino Staff
       </Heading>

@@ -54,13 +54,14 @@ function Actions(props) {
         <>
           <Heading>Actions</Heading>
           <Stack spacing={1} align="center">
-            <Heading size="l">Money</Heading>
+            <Heading size="l">Casino Tokens</Heading>
             <Text>${characterData.money}</Text>
             <Button
               value="pay"
               rounded="md"
               colorScheme="teal"
               onClick={onOpen}
+              disabled={true}
             >
               Pay
             </Button>

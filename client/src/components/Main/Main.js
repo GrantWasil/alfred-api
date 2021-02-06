@@ -9,6 +9,7 @@ import CharacterList from '../CharacterList/CharacterList';
 import Header from '../Header/Header';
 import EventInfo from '../EventInfo/EventInfo';
 import Admin from '../Admin/Admin';
+import News from '../News/News';
 import Actions from '../Actions/Actions';
 import Footer from '../Footer/Footer';
 import api from '../../utils/Api';
@@ -65,7 +66,7 @@ function Main() {
         title: "Money Recieved",
         description: `${data.sender} has sent you ${data.amount}`,
         status: "success",
-        duration: 5000,
+        duration: 9000,
         isClosable: true,
       })
       api.getCharacterData().then((res) => {
@@ -83,7 +84,7 @@ function Main() {
         title: `Ability Used On You`,
         description: `${data.ability} has been used on you. Reach out to Grant if needed.`,
         status: "warning",
-        duration: 5000,
+        duration: 9000,
         isClosable: true,
       })
       api.getCharacterData().then((res) => {
@@ -196,6 +197,7 @@ function Main() {
             onUseAbility={handleUseAbility}
           />
           <Bio path="/bio" characterData={characterData} />
+          <News path="/news" />
         </Router>
       </Container>
       <Footer />

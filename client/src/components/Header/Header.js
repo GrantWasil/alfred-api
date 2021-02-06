@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Link,
-  Box,
-  Flex,
-  Text,
-  Button,
-  Stack,
-} from '@chakra-ui/react';
+import { Link, Box, Flex, Text, Button, Stack } from '@chakra-ui/react';
 import { Link as ReachLink } from '@reach/router';
 
 import Logo from '../Logo/Logo';
@@ -32,8 +25,6 @@ const Header = (props) => {
     </NavBarContainer>
   );
 };
-
-
 
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
@@ -83,19 +74,22 @@ const MenuLinks = (props) => {
                 Event Info
               </MenuItem>
               <MenuItem to="/list" closeMenu={closeMenu}>
-                Guest List{' '}
+                Guest List
               </MenuItem>
             </>
           ) : (
             <>
-              <MenuItem to="/event" closeMenu={closeMenu}>
-                Event Info
+              <MenuItem to="/bio" closeMenu={closeMenu}>
+                Your Full Character
+              </MenuItem>
+              <MenuItem to="/news" closeMenu={closeMenu}>
+                Front Page News!
               </MenuItem>
               <MenuItem to="/actions" closeMenu={closeMenu}>
                 Actions
               </MenuItem>
-              <MenuItem to="/bio" closeMenu={closeMenu}>
-                Bio
+              <MenuItem to="/list" closeMenu={closeMenu}>
+                Guest List
               </MenuItem>
             </>
           )}
