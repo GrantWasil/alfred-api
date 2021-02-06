@@ -81,7 +81,7 @@ function Main() {
     } else {
       toast({
         title: `Ability Used On You`,
-        description: `${data.ability.name} has been used on you. Reach out to Grant if needed.`,
+        description: `${data.ability} has been used on you. Reach out to Grant if needed.`,
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -143,13 +143,11 @@ function Main() {
   }
 
   function handleUseAbility(ability, id) {
-    console.log(id);
-    const targetAbility = ability.name;
-    api.useAbility(targetAbility)
+    const abilityName = ability.name;
+    api.useAbility(abilityName)
       .then((res) => {
         if (res.name) {
           const sender = res.name;
-          setCharacterData(res);
           toast({
             title: "Ability Used",
             description: "Your target has been notified",
@@ -157,7 +155,8 @@ function Main() {
             duration: 5000,
             isClosable: true,
           })
-          socket.emit('ability', { ability, sender, id })
+          socket.emit('ability', { ability: abilityName, sender, id })
+          setCharacterData(res);
         }
       })
   }
