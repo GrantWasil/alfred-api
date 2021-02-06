@@ -143,6 +143,7 @@ function Main() {
   }
 
   function handleUseAbility(ability, id) {
+    console.log(id);
     const targetAbility = ability.name;
     api.useAbility(targetAbility)
       .then((res) => {

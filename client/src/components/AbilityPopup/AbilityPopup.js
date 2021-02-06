@@ -24,7 +24,8 @@ function AbilityPopup(props) {
   }
 
   function handleUseAbilitySubmit(e) {
-    onUseAbility(ability, e.target.value);
+    const id = e.target.value;
+    onUseAbility(ability, id);
     handleAbilitySearchClose();
   }
 
