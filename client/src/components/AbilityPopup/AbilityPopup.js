@@ -17,24 +17,14 @@ function AbilityPopup(props) {
   const { ability, onUseAbility, allCharacterData, characterData } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [ isAbilitySearchOpen, setIsAbilitySearchOpen ] = useState(false);
-  const [ abilityID, setAbilityID ] = useState('');
+
 
   function handleAbilitySearchClose() {
     setIsAbilitySearchOpen(false);
-    setAbilityID('');
   }
 
   function handleUseAbilitySubmit(e) {
-    const id = e.target.value
-    console.log(id);
-    setAbilityID(id)
-    console.log(abilityID);
-    submitData(id);
-  }
-
-  function submitData() {
-    console.log(ability, abilityID);
-    onUseAbility(ability, abilityID);
+    onUseAbility(ability, e.target.value);
     handleAbilitySearchClose();
   }
 
