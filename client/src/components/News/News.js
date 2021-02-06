@@ -87,6 +87,17 @@ function News() {
             Police still have no leads in the double murder.
           </Text>
         </Stack>
+        <Stack padding={2}>
+          <Heading size="sm">Auction Catalogue</Heading>
+          <Text>Lot #1 – Countess Alice de Ville – auctioning a drink with her at the bar</Text>
+          <Text>Lot #2 – Lord James T. Burke – auctioning a weekend at his English country mansion</Text>
+          <Text>Lot #3 – Donovan Jones – auctioning his poetic skills, offering to write a short poem for the highest bidder</Text>
+          <Text>Lot #4 – A beautiful diamond pendant, valued at two thousand Euros</Text>
+          <Text>Lot #5 – Anna Upanova – auctioning a drink with her at the bar</Text>
+          <Text>Lot #6 – Felicity Phillips – auctioning a dance with her this evening</Text>
+          <Text>Lot #7 – A poetry book by the poet Donovan Jones (who may be prevailed upon to autograph it)</Text>
+          <Text>Plus other Lots of interest and value, to be added on the night</Text>
+        </Stack>
       </Stack>
     </Flex>
   );
