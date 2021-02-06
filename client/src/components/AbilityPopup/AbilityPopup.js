@@ -25,9 +25,11 @@ function AbilityPopup(props) {
   }
 
   function handleUseAbilitySubmit(e) {
-    setAbilityID(e.target.value)
+    const id = e.target.value
+    console.log(id);
+    setAbilityID(id)
     console.log(abilityID);
-    submitData();
+    submitData(id);
   }
 
   function submitData() {
