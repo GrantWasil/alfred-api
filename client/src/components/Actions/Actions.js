@@ -61,7 +61,6 @@ function Actions(props) {
               rounded="md"
               colorScheme="teal"
               onClick={onOpen}
-              disabled={true}
             >
               Pay
             </Button>

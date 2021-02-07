@@ -12,7 +12,7 @@ function News() {
       <Stack padding={4}>
         <Stack padding={3}>
           <Heading as="h1">Casino Fatale</Heading>
-          <Heading size="2xl">LET THE GOOD TIMES ROLL!</Heading>
+          <Heading size="xl">LET THE GOOD TIMES ROLL!</Heading>
           <Heading size="sm">
             Hotel D’Etoile is having its best year ever. To celebrate, it is
             hosting a charity auction in aid of the local orphanage.

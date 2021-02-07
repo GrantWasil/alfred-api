@@ -57,7 +57,7 @@ function AbilityPopup(props) {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={useAbility} disabled={true}>
+            <Button colorScheme="blue" mr={3} onClick={useAbility}>
               Use
             </Button>
             <Button onClick={onClose}>Close</Button>
